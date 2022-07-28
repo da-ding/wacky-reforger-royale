@@ -22,10 +22,18 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
   }
   SCR_GameOverScreenManagerComponent "{56DEC646298AD219}" {
   }
+  SCR_NotificationSenderComponent "{56FA84B04BE7D4C0}" {
+   m_iKillFeedType FULL
+   m_iReceiveKillFeedType ALL
+  }
   SCR_RespawnMenuHandlerComponent "{59CC387546D47B87}" {
+   m_bAllowLoadoutSelection 0
   }
   SCR_RespawnTimerComponent "{59CC3874D1686C96}" {
-   m_fRespawnTime 2
+   m_fRespawnTime 5
+  }
+  SCR_SaveLoadComponent "{58FA739CBE3E9FC5}" {
+   Enabled 0
   }
  }
  coords 10346.953 12.943 12034.763
@@ -64,7 +72,7 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  OnGameStart ""\
  "		super.OnGameStart();"\
  "	"
- m_bAutoPlayerRespawn 0
+ m_fBleedingRateScale 0.2
 }
 TagManager : "{2FA9E172CAB1857A}Prefabs/MP/Managers/TagManager.et" {
  coords 10343.464 13.056 12030.378

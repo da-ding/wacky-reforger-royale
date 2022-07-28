@@ -1,3 +1,31 @@
+$grp AISpawnerEntity {
+ AISpawns1 {
+  coords 11339.271 114.034 11279.496
+  TriggerShapeType Sphere
+  SphereRadius 303.1
+  ShapeColor 0 0.125 0.502 1
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 0.5
+  m_aEntitySpawnSlots {
+   "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et" "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et"
+  }
+  m_fSpawnCount 6
+ }
+ AISpawns2 {
+  coords 11074.502 51.225 11775.425
+  TriggerShapeType Sphere
+  SphereRadius 393.2
+  ShapeColor 0 0.125 0.502 1
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 0.5
+  m_aEntitySpawnSlots {
+   "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et" "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et"
+  }
+  m_fSpawnCount 8
+ }
+}
 $grp DAD_LootboxRadiusEntity {
  ItemsRare {
   coords 11227.653 39.423 11579.381
@@ -72,48 +100,18 @@ $grp DAD_LootboxRadiusEntity {
   m_eLootbox "{D349CAB0A6544C59}Prefabs/Props/Furniture/TableWorkshop_01_short.et"
  }
 }
-$grp DAD_SpawnRadiusEntity {
- ItemsVeryRare {
-  coords 11197.374 70.309 11643.339
-  TriggerShapeType Sphere
-  SphereRadius 911.3
-  ShapeColor 0.749 0.376 0.655 1
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 0.5
-  m_aEntitySpawnSlots {
-   "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et" "{F6B23D17D5067C11}Prefabs/Vehicles/Wheeled/M151A2/M151A2_M2HB.et" "{DD774A8FD0989A78}Prefabs/Vehicles/Wheeled/M998/M1025_armed_M2HB_MERDC.et" "{1BABF6B33DA0AEB6}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_command.et" "{DECF116069DCCC2B}Prefabs/Structures/Cultural/Castles/Castle_01_Tower.et" "{7E2380494811A5FB}Prefabs/Structures/Infrastructure/Towers/TransmitterTower_01_medium.et" "{9D720679B696FEE1}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_US_01_M2HB.et" "{6C125CAB25D1631A}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_USSR_01.et" "{CB6D914A907F4378}Prefabs/Props/Furniture/WashingMachine_01.et" "{1F415A3F7ECBE13A}Prefabs/Props/Furniture/Piano_01_brown.et" "{183080E8479F2893}Prefabs/Props/Furniture/Piano_01_black.et" "{F49E9F098C6069AD}Prefabs/Props/Furniture/Toilet_01.et" "{BE0613AFA52D901A}Prefabs/Structures/BuildingParts/Doors/Door_Arch_Chapel_01_LEFT_EXT_ST_B.et" "{EDE6EC8B05227E3E}Prefabs/Systems/Arsenal/ArsenalBoxes/USSR/ArsenalBox_USSR.et" "{8DCF642905449796}Prefabs/Systems/Arsenal/AmmoBoxes/FIA/AmmoBoxArsenal_Launcher_FIA.et" "{BE99D77D1155B127}Prefabs/Systems/Arsenal/ArsenalBoxes/US/ArsenalBox_US.et"
-  }
-  m_fSpawnCount 3
+DAD_SpawnRadiusEntity ItemsVeryRare {
+ coords 11197.374 70.309 11643.339
+ TriggerShapeType Sphere
+ SphereRadius 911.3
+ ShapeColor 0.749 0.376 0.655 1
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ UpdatePeriod 0.5
+ m_aEntitySpawnSlots {
+  "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et" "{F6B23D17D5067C11}Prefabs/Vehicles/Wheeled/M151A2/M151A2_M2HB.et" "{DD774A8FD0989A78}Prefabs/Vehicles/Wheeled/M998/M1025_armed_M2HB_MERDC.et" "{1BABF6B33DA0AEB6}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_command.et" "{DECF116069DCCC2B}Prefabs/Structures/Cultural/Castles/Castle_01_Tower.et" "{7E2380494811A5FB}Prefabs/Structures/Infrastructure/Towers/TransmitterTower_01_medium.et" "{9D720679B696FEE1}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_US_01_M2HB.et" "{6C125CAB25D1631A}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_USSR_01.et" "{CB6D914A907F4378}Prefabs/Props/Furniture/WashingMachine_01.et" "{1F415A3F7ECBE13A}Prefabs/Props/Furniture/Piano_01_brown.et" "{183080E8479F2893}Prefabs/Props/Furniture/Piano_01_black.et" "{F49E9F098C6069AD}Prefabs/Props/Furniture/Toilet_01.et" "{BE0613AFA52D901A}Prefabs/Structures/BuildingParts/Doors/Door_Arch_Chapel_01_LEFT_EXT_ST_B.et" "{EDE6EC8B05227E3E}Prefabs/Systems/Arsenal/ArsenalBoxes/USSR/ArsenalBox_USSR.et" "{8DCF642905449796}Prefabs/Systems/Arsenal/AmmoBoxes/FIA/AmmoBoxArsenal_Launcher_FIA.et" "{BE99D77D1155B127}Prefabs/Systems/Arsenal/ArsenalBoxes/US/ArsenalBox_US.et"
  }
- AISpawns1 {
-  coords 11339.271 114.034 11279.496
-  TriggerShapeType Sphere
-  SphereRadius 303.1
-  ShapeColor 0 0.125 0.502 1
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 2
-  m_aEntitySpawnSlots {
-   "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et" "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et"
-  }
-  m_fSpawnCount 6
-  m_bRandomChoose 0
- }
- AISpawns2 {
-  coords 11074.502 51.225 11775.425
-  TriggerShapeType Sphere
-  SphereRadius 393.2
-  ShapeColor 0 0.125 0.502 1
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 2
-  m_aEntitySpawnSlots {
-   "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et" "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et"
-  }
-  m_fSpawnCount 8
-  m_bRandomChoose 0
- }
+ m_fSpawnCount 3
 }
 SCR_EditorTask : "{3AD0A1257870E6C7}Prefabs/Tasks/CustomTask.et" {
  components {
@@ -128,12 +126,4 @@ SCR_EditorTask : "{3AD0A1257870E6C7}Prefabs/Tasks/CustomTask.et" {
  m_sName "Good Items here!"
  m_sDescription "Come and get some great items!"
  m_TextType CUSTOM
-}
-SCR_SpawnPoint SpawnUSSR : "{4FEA25583D0975F7}Prefabs/MP/Spawning/SpawnPoint_USSR.et" {
- coords 7471.541 7.531 6700.158
-}
-SCR_SpawnPoint SpawnUS : "{5A2220DD0C16958B}Prefabs/MP/Spawning/SpawnPoint_US.et" {
- coords 10287.898 9.686 12081.001
- angleX 0.994
- angleY -48.922
 }
