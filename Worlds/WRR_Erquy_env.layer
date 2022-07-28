@@ -7,4 +7,5 @@ EnvironmentProbeEntity : "{B6B6A21399C5571B}Prefabs/World/DefaultWorld/EnvProbe_
  coords 10344.483 12.668 12033.234
  angleX -3.68
  angleY 110.31
+ Visible 0
 }

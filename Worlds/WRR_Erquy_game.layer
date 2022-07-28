@@ -270,3 +270,7 @@ SCR_DestructibleBuildingEntity Barrier : "{3299E6F34CE40185}Prefabs/Structures/A
  }
  m_fMinUndamagedThreshold 4772.5
 }
+StaticModelEntity : "{7A4A0A8283210784}Prefabs/Compositions/Misc/SubCompositions/TableMilitary_Cluttered_US_01.et" {
+ coords 11040.695 22.842 11854.076
+ angleY 0
+}

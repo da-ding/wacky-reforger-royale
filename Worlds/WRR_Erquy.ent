@@ -16,12 +16,6 @@ Layer meta_mp {
 Layer env {
  Index 4
 }
-Layer fac_contrite {
- Index 5
-}
-Layer fac_rebukers {
- Index 6
-}
 Layer game {
  Index 7
 }

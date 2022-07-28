@@ -2,7 +2,9 @@ SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
  components {
   NavmeshWorldComponent "{5584F30E67F617AD}" {
    NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
-    NavmeshFile "{AD5F99CD7C59D5E0}worlds/GameMaster/Navmeshes/GM_Eden.nmn"
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{59F15B73BCDDEC2C}" {
+     NavmeshFile "{AD5F99CD7C59D5E0}worlds/GameMaster/Navmeshes/GM_Eden.nmn"
+    }
    }
   }
  }
@@ -30,7 +32,6 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  angleX -4.627
  angleY 117.883
  EOnFrame ""\
- "		super.EOnFrame(owner, timeSlice);"\
  "		World w = GetGame().GetWorld();"\
  ""\
  "		auto usTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
@@ -52,9 +53,13 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		SCR_Math3D.ScaleMatrix(transform, scale);"\
  ""\
  "		barrier.SetWorldTransform(transform);"\
+ "		"\
+ "		owner.Update();"\
+ "		"\
+ "		super.EOnFrame(owner, timeSlice);"\
  "	"
  EOnPostFrame ""\
- "		super.EOnPostFrame(owner,timeSlice);"\
+ "		super.EOnPostFrame(owner, timeSlice);"\
  "	"
  OnGameStart ""\
  "		super.OnGameStart();"\
