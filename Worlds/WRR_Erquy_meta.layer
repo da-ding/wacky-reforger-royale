@@ -38,11 +38,14 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  coords 10346.953 12.943 12034.763
  angleX -4.627
  angleY 117.883
- EOnFrame ""\
+ userScript "	IEntity m_eBarrier;"\
+ "	"\
+ "	void ScaleBarrier(float timeSlice)"\
+ "	{"\
  "		World w = GetGame().GetWorld();"\
- "		auto usTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
- "		auto ussrTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUSSR\"));"\
- "		"\
+ "		SCR_FactionControlTriggerEntity usTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
+ "		SCR_FactionControlTriggerEntity ussrTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUSSR\"));"\
+ ""\
  "		float lastRadius = usTrigger.GetSphereRadius();"\
  "		float delta = (timeSlice * 1.5);"\
  "		"\
@@ -53,19 +56,17 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		"\
  "		float scale = radius / lastRadius;"\
  ""\
- "		IEntity barrier = IEntity.Cast(GetGame().GetWorld().FindEntityByName(\"Barrier\"));"\
- "		if (!barrier) return;"\
+ "		if (!m_eBarrier) return;"\
  ""\
  "		vector transform[4];"\
- "		barrier.GetWorldTransform(transform);"\
+ "		m_eBarrier.GetWorldTransform(transform);"\
  "		if (!transform) return;"\
  "		transform[3] = transform[3] + (\"0 0.15 0\" * delta); // slightly raise because origin is below ground"\
  "		SCR_Math3D.ScaleMatrix(transform, scale);"\
  ""\
- "		barrier.SetWorldTransform(transform);"\
- "		"\
- "		owner.Update();"\
- "		"\
+ "		m_eBarrier.SetWorldTransform(transform);"\
+ "	}"
+ EOnFrame ""\
  "		super.EOnFrame(owner, timeSlice);"\
  "	"
  EOnPostFrame ""\
@@ -73,6 +74,9 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "	"
  OnGameStart ""\
  "		super.OnGameStart();"\
+ "		GetGame().GetCallqueue().CallLater(ScaleBarrier, 100, true, 0.1);"\
+ "		m_eBarrier = IEntity.Cast(GetGame().GetWorld().FindEntityByName(\"Barrier\"));"\
+ "		GetGame().GetCallqueue().CallLater(m_eBarrier.Update, 500, true);"\
  "	"
  m_fBleedingRateScale 0.2
 }
