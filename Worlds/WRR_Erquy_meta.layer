@@ -44,7 +44,7 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		auto ussrTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUSSR\"));"\
  "		"\
  "		float lastRadius = usTrigger.GetSphereRadius();"\
- "		float delta = (timeSlice * 8);"\
+ "		float delta = (timeSlice * 1.5);"\
  "		"\
  "		float radius = lastRadius - delta;"\
  "		usTrigger.SetSphereRadius(radius);"\
@@ -59,7 +59,7 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		vector transform[4];"\
  "		barrier.GetWorldTransform(transform);"\
  "		if (!transform) return;"\
- "		transform[3] = transform[3] + (\"0 0.16 0\" * delta); // slightly raise because origin is below ground"\
+ "		transform[3] = transform[3] + (\"0 0.15 0\" * delta); // slightly raise because origin is below ground"\
  "		SCR_Math3D.ScaleMatrix(transform, scale);"\
  ""\
  "		barrier.SetWorldTransform(transform);"\
