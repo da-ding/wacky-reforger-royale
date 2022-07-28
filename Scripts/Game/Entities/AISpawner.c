@@ -6,7 +6,7 @@ class AISpawnerEntityClass: DAD_SpawnRadiusEntityClass
 class AISpawnerEntity: DAD_SpawnRadiusEntity 
 {
 	protected ref array<DAD_GroupSpawnPoint> m_SpawnPoints;
-	protected ref array<ref SCR_UIInfo> Infos;
+	protected static int m_iGroupID = 0;
 	
 	private void CreateSpawns()
 	{
@@ -17,32 +17,25 @@ class AISpawnerEntity: DAD_SpawnRadiusEntity
 	{
 		Resource us   = Resource.Load("{63F01153A435D2BD}Prefabs/SpawnUS.et");
 		Resource ussr = Resource.Load("{63F01153A435D2BD}Prefabs/SpawnUSSR.et");
-
+		
 		super.OnActivate(ent);
+		
 		foreach (int i, IEntity e : m_Entities)
 		{
 			auto group = SCR_AIGroup.Cast(e);
+			group.SetName("Squad " + m_iGroupID++);
 
 			string fac = group.m_faction;
 			Resource res;
-			if (fac == "US") {
+			if (fac == "US")
 				res = us;
-			} else {
-				res = ussr; 
-			}
-			
+			else
+				res = ussr;
+
 			DAD_GroupSpawnPoint spawn = DAD_GroupSpawnPoint.Cast(SpawnHelpers.SpawnEntity(res, group.GetOrigin()));
-			LocalizedString s = fac + e + i.ToString();
-			SCR_UIInfo info = SCR_UIInfo.CreateInfo(s)
-			spawn.LinkInfo(info);
-			Infos.Insert(info);
 
-			spawn.SetGroup(group);
-			spawn.ClearFlags(EntityFlags.STATIC, false);
 			spawn.SetFactionKey(fac);
-
-			spawn.Update();
-			ent.Update();
+			spawn.SetGroup(group);
 		}
 	}
 
