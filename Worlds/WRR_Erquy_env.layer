@@ -1,0 +1,10 @@
+GenericWorldFogEntity : "{78D9BBF0F423FEB4}Prefabs/World/DefaultWorld/FogHaze_Default.et" {
+ coords 10345.769 12.496 12033.02
+ angleX 2
+ angleY 108.417
+}
+EnvironmentProbeEntity : "{B6B6A21399C5571B}Prefabs/World/DefaultWorld/EnvProbe_Default.et" {
+ coords 10344.483 12.668 12033.234
+ angleX -3.68
+ angleY 110.31
+}

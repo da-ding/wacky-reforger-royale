@@ -1,0 +1,10 @@
+ScriptedChatEntity : "{536D80EB494DDC43}Prefabs/MP/Campaign/CampaignMPChatEntity.et" {
+ coords 10342.584 12.9 12034.638
+ angleX -2.733
+ angleY 131.136
+}
+RadioManagerEntity : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
+ coords 10340.484 13.303 12036.056
+ angleX -6.52
+ angleY 133.03
+}

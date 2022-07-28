@@ -1,0 +1,272 @@
+$grp SCR_FactionControlTriggerEntity {
+ VictoryConditionUS {
+  coords 11203.813 0 11646.876
+  angleY -31.8
+  TriggerShapeType Sphere
+  SphereRadius 1000
+  BoxMins -650 -200 -750
+  BoxMaxs 650 1100 750
+  ShapeColor 1 0.491 0 0.157
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 1
+  EOnFrame ""\
+  "		Print(\"Foo\");"\
+  "		//auto trigger = SCR_FactionControlTriggerEntity.Cast(owner);"\
+  "		//trigger.SetSphereRadius(100.0);"\
+  "		super.EOnFrame(owner, timeSlice);"\
+  "	"
+  OnActivate ""\
+  "		Print(this.GetSphereRadius());"\
+  "		SCR_FactionControlTriggerEntity trigger = SCR_FactionControlTriggerEntity.Cast(ent);"\
+  "		int factionIndex = GetGame().GetFactionManager().GetFactionIndex(trigger.m_OwnerFaction);"\
+  "		"\
+  "		auto gameMode = SCR_BaseGameMode.Cast(GetGame().GetGameMode());"\
+  "		gameMode.EndGameMode("\
+  "				SCR_GameModeEndData.CreateSimple(SCR_GameModeEndData.ENDREASON_EDITOR_FACTION_VICTORY, -1, factionIndex)"\
+  "		);"\
+  "	"
+  OnDeactivate ""\
+  "		Print(\"deactivated\");"\
+  "	"
+  OnFrame ""\
+  "		//auto trigger = SCR_FactionControlTriggerEntity.Cast(owner);"\
+  "		//trigger.SetSphereRadius(trigger.GetSphereRadius() - (timeSlice * 16));"\
+  "		super.OnFrame(owner, timeSlice);"\
+  "	"
+  m_sOwnerFactionKey "US"
+  m_fFriendlyRatioLimit 1
+ }
+ VictoryConditionUSSR {
+  coords 11203.813 0 11646.876
+  TriggerShapeType Sphere
+  SphereRadius 1000
+  BoxMins -650 -200 -750
+  BoxMaxs 650 1100 750
+  ShapeColor 1 0.491 0 0.157
+  TriggerActivationType "First change"
+  PeriodicQueries 1
+  UpdatePeriod 1
+  OnActivate ""\
+  "		SCR_FactionControlTriggerEntity trigger = SCR_FactionControlTriggerEntity.Cast(ent);"\
+  "		int factionIndex = GetGame().GetFactionManager().GetFactionIndex(trigger.m_OwnerFaction);"\
+  "		Print(this.GetSphereRadius());"\
+  "		auto gameMode = SCR_BaseGameMode.Cast(GetGame().GetGameMode());"\
+  "		gameMode.EndGameMode("\
+  "				SCR_GameModeEndData.CreateSimple(SCR_GameModeEndData.ENDREASON_EDITOR_FACTION_VICTORY, -1, factionIndex)"\
+  "		);"\
+  "	"
+  OnFrame ""\
+  "		//auto trigger = SCR_FactionControlTriggerEntity.Cast(owner);"\
+  "		//trigger.SetSphereRadius(trigger.GetSphereRadius() - (timeSlice * 16));"\
+  "	"
+  m_sOwnerFactionKey "USSR"
+  m_fFriendlyRatioLimit 1
+ }
+}
+SCR_DestructibleBuildingEntity Barrier : "{3299E6F34CE40185}Prefabs/Structures/Agriculture/Greenhouse/Greenhouse_01.et" {
+ components {
+  MeshObject "{506EDA9D46FC6C06}" {
+   CastShadow 0
+   CastFarShadow 0
+   ClutterOccluder 0
+  }
+  RigidBody "{506EDA9CBE1B57FF}" {
+   Enabled 0
+   SimState None
+   Static 0
+  }
+ }
+ coords 11184.133 -131 11635.762
+ angleY -31.8
+ scale 376.8
+ Flags 1027
+ IsBuilding 0
+ EntitySlots {
+  EntitySlotInfo glass_greenhouse_01_60x157_01 {
+   PivotID "Glass_GreenHouse_01_60x157_01"
+   Prefab "{B2840A8DA855704B}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x157.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x157_02 {
+   PivotID "Glass_GreenHouse_01_60x157_02"
+   Prefab "{B2840A8DA855704B}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x157.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x157_03 {
+   PivotID "Glass_GreenHouse_01_60x157_03"
+   Prefab "{B2840A8DA855704B}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x157.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x157_04 {
+   PivotID "Glass_GreenHouse_01_60x157_04"
+   Prefab "{B2840A8DA855704B}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x157.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x157_05 {
+   PivotID "Glass_GreenHouse_01_60x157_05"
+   Prefab "{B2840A8DA855704B}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x157.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x157_06 {
+   PivotID "Glass_GreenHouse_01_60x157_06"
+   Prefab "{B2840A8DA855704B}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x157.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x157_07 {
+   PivotID "Glass_GreenHouse_01_60x157_07"
+   Prefab "{B2840A8DA855704B}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x157.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x157_08 {
+   PivotID "Glass_GreenHouse_01_60x157_08"
+   Prefab "{B2840A8DA855704B}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x157.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x157_09 {
+   PivotID "Glass_GreenHouse_01_60x157_09"
+   Prefab "{B2840A8DA855704B}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x157.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x157_10 {
+   PivotID "Glass_GreenHouse_01_60x157_10"
+   Prefab "{B2840A8DA855704B}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x157.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x157_11 {
+   PivotID "Glass_GreenHouse_01_60x157_11"
+   Prefab "{B2840A8DA855704B}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x157.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x157_12 {
+   PivotID "Glass_GreenHouse_01_60x157_12"
+   Prefab "{B2840A8DA855704B}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x157.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x208_01 {
+   PivotID "Glass_GreenHouse_01_60x208_01"
+   Prefab "{9A4B0E077E271F62}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x208.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x208_02 {
+   PivotID "Glass_GreenHouse_01_60x208_02"
+   Prefab "{9A4B0E077E271F62}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x208.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x208_03 {
+   PivotID "Glass_GreenHouse_01_60x208_03"
+   Prefab "{9A4B0E077E271F62}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x208.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x208_04 {
+   PivotID "Glass_GreenHouse_01_60x208_04"
+   Prefab "{9A4B0E077E271F62}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x208.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x208_05 {
+   PivotID "Glass_GreenHouse_01_60x208_05"
+   Prefab "{9A4B0E077E271F62}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x208.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x208_06 {
+   PivotID "Glass_GreenHouse_01_60x208_06"
+   Prefab "{9A4B0E077E271F62}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x208.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x208_07 {
+   PivotID "Glass_GreenHouse_01_60x208_07"
+   Prefab "{9A4B0E077E271F62}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x208.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x208_08 {
+   PivotID "Glass_GreenHouse_01_60x208_08"
+   Prefab "{9A4B0E077E271F62}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x208.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x208_09 {
+   PivotID "Glass_GreenHouse_01_60x208_09"
+   Prefab "{9A4B0E077E271F62}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x208.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x208_10 {
+   PivotID "Glass_GreenHouse_01_60x208_10"
+   Prefab "{9A4B0E077E271F62}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x208.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x208_11 {
+   PivotID "Glass_GreenHouse_01_60x208_11"
+   Prefab "{9A4B0E077E271F62}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x208.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_60x208_12 {
+   PivotID "Glass_GreenHouse_01_60x208_12"
+   Prefab "{9A4B0E077E271F62}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_60x208.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_90x29_01 {
+   PivotID "Glass_GreenHouse_01_90x29_01"
+   Prefab "{EE862867B84D7B75}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_90x29.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_90x29_02 {
+   PivotID "Glass_GreenHouse_01_90x29_02"
+   Prefab "{EE862867B84D7B75}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_90x29.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_90x44_01 {
+   PivotID "Glass_GreenHouse_01_90x44_01"
+   Prefab "{8877C42E7C74B386}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_90x44.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_90x66_01 {
+   PivotID "Glass_GreenHouse_01_90x66_01"
+   Prefab "{EFAB6D2625107523}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_90x66.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_90x80_01 {
+   PivotID "Glass_GreenHouse_01_90x80_01"
+   Prefab "{388CF04591941EF9}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_90x80.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_left_103x80_01 {
+   PivotID "Glass_GreenHouse_01_Left_103x80_01"
+   Prefab "{47930F8ED769B117}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Left_103x80.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_left_103x80_02 {
+   PivotID "Glass_GreenHouse_01_Left_103x80_02"
+   Prefab "{47930F8ED769B117}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Left_103x80.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_left_112x65_01 {
+   PivotID "Glass_GreenHouse_01_Left_112x65_01"
+   Prefab "{AE494E13FF98E220}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Left_112x65.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_left_112x65_02 {
+   PivotID "Glass_GreenHouse_01_Left_112x65_02"
+   Prefab "{AE494E13FF98E220}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Left_112x65.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_left_119x44_01 {
+   PivotID "Glass_GreenHouse_01_Left_119x44_01"
+   Prefab "{5DD2A2CB5B0CC1B5}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Left_119x44.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_left_119x44_02 {
+   PivotID "Glass_GreenHouse_01_Left_119x44_02"
+   Prefab "{5DD2A2CB5B0CC1B5}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Left_119x44.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_left_85x35_01 {
+   PivotID "Glass_GreenHouse_01_Left_85x35_01"
+   Prefab "{1B8EBC09F947642F}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Left_85x35.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_left_85x35_02 {
+   PivotID "Glass_GreenHouse_01_Left_85x35_02"
+   Prefab "{1B8EBC09F947642F}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Left_85x35.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_right_103x80_01 {
+   PivotID "Glass_GreenHouse_01_Right_103x80_01"
+   Prefab "{68A3B6A6E1AE472D}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Right_103x80.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_right_103x80_02 {
+   PivotID "Glass_GreenHouse_01_Right_103x80_02"
+   Prefab "{68A3B6A6E1AE472D}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Right_103x80.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_right_112x65_01 {
+   PivotID "Glass_GreenHouse_01_Right_112x65_01"
+   Prefab "{7A51B1E129D90E5D}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Right_112x65.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_right_112x65_02 {
+   PivotID "Glass_GreenHouse_01_Right_112x65_02"
+   Prefab "{7A51B1E129D90E5D}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Right_112x65.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_right_119x44_01 {
+   PivotID "Glass_GreenHouse_01_Right_119x44_01"
+   Prefab "{89CA5D398D4D2DC8}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Right_119x44.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_right_119x44_02 {
+   PivotID "Glass_GreenHouse_01_Right_119x44_02"
+   Prefab "{89CA5D398D4D2DC8}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Right_119x44.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_right_85x35_01 {
+   PivotID "Glass_GreenHouse_01_Right_85x35_01"
+   Prefab "{2EFB20F8A587AF97}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Right_85x35.et"
+  }
+  EntitySlotInfo glass_greenhouse_01_right_85x35_02 {
+   PivotID "Glass_GreenHouse_01_Right_85x35_02"
+   Prefab "{2EFB20F8A587AF97}Prefabs/Structures/BuildingParts/Windows/Glass_GreenHouse_01/Glass_GreenHouse_01_Right_85x35.et"
+  }
+  EntitySlotInfo socket_door_01 {
+   PivotID "Socket_door_01"
+   Prefab "{9A05C5ADBE4EEDFC}Prefabs/Structures/BuildingParts/Doors/Door_Greenhouse_01_Right_EXT_ST_B.et"
+  }
+ }
+ m_fMinUndamagedThreshold 4772.5
+}

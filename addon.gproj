@@ -1,0 +1,8 @@
+GameProject {
+ ID "WackyReforgerRoyale"
+ GUID "59E254AA82D6CC5D"
+ TITLE "Wacky Reforger Royale"
+ Dependencies {
+  "59CA960A4388AA84" "59DCC62CF97EA96E" "58D0FB3206B6F859" "5614BBCCBB55ED1C"
+ }
+}
