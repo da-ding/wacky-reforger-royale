@@ -1,0 +1,13 @@
+SCR_AIGroup : "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et" {
+ ID "0000000000000001"
+ components {
+  AIGroupSteeringComponent "{55C4E4E29127F05A}" {
+   "Max Distance to Path" 5
+  }
+ }
+ DangerEventRange 50
+ DynamicSim_Lod1_distance 500
+ m_aUnitPrefabSlots {
+  "{814A00A63A64E8B4}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Pistol.et" "{814A00A63A64E8B4}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Pistol.et" "{814A00A63A64E8B4}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Pistol.et"
+ }
+}

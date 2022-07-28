@@ -1,0 +1,15 @@
+DAD_LootboxRadiusEntity {
+ ID "59F81306B1A1AC79"
+ coords 11339.271 -22.641 11279.496
+ TriggerShapeType Sphere
+ SphereRadius 303.1
+ ShapeColor 0.02 0 0.502 1
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ UpdatePeriod 0.5
+ m_aEntitySpawnSlots {
+  "{F2539FA5706E51E4}Prefabs/Items/Equipment/Binoculars/Binoculars_B12.et" "{0CF54B9A85D8E0D4}Prefabs/Items/Equipment/Binoculars/Binoculars_M22.et" "{3A421547BC29F679}Prefabs/Items/Equipment/Flashlights/Flashlight_MX991.et" "{575EA58E67448C2A}Prefabs/Items/Equipment/Flashlights/Flashlight_Soviet_01.et" "{6FD6C96121905202}Prefabs/Items/Equipment/Watches/Watch_Vostok.et" "{78ED4FEF62BBA728}Prefabs/Items/Equipment/Watches/Watch_SandY184A.et" "{5C5C6EE05EE2FF1A}Prefabs/Items/Equipment/Backpacks/Backpack_ALICE_Medium_assembled.et" "{6A39B5843B3F36DA}Prefabs/Items/Equipment/Backpacks/Backpack_RPG_Assistant.et" "{FDA7B6630DB87991}Prefabs/Items/Equipment/Backpacks/Backpack_M70_Swiss.et" "{D2018EDB1BBF4C88}Prefabs/Weapons/Attachments/Optics/Optic_ARTII.et" "{C850A33226B8F9C1}Prefabs/Weapons/Attachments/Optics/Optic_PSO1.et" "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et" "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et"
+ }
+ m_fSpawnCount 10
+ m_eLootbox "{D349CAB0A6544C59}Prefabs/Props/Furniture/TableWorkshop_01_short.et"
+}

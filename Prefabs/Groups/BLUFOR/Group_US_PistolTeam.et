@@ -1,0 +1,13 @@
+SCR_AIGroup : "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et" {
+ ID "0000000000000001"
+ components {
+  AIGroupSteeringComponent "{55C4E4E29127F05A}" {
+   "Max Distance to Path" 5
+  }
+ }
+ DangerEventRange 50
+ DynamicSim_Lod1_distance 500
+ m_aUnitPrefabSlots {
+  "{E4DE47895BD6B650}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Pistol.et" "{E4DE47895BD6B650}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Pistol.et" "{E4DE47895BD6B650}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Pistol.et"
+ }
+}

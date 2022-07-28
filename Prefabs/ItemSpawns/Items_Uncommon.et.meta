@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{63F01153A435D2BD}Prefabs/SpawnUS.et"
+ Name "{B32B81C8F9CF29A6}Prefabs/ItemSpawns/Items_Uncommon.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }

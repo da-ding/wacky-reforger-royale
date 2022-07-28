@@ -8,9 +8,10 @@ $grp AISpawnerEntity {
   PeriodicQueries 1
   UpdatePeriod 0.5
   m_aEntitySpawnSlots {
-   "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et" "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et"
+   "{F1CFB248C6448F05}Prefabs/Groups/BLUFOR/Group_US_PistolTeam.et" "{016400988C331161}Prefabs/Groups/OPFOR/Group_USSR_PistolTeam.et"
   }
   m_fSpawnCount 6
+  m_bRandomChoose 0
  }
  AISpawns2 {
   coords 11074.502 51.225 11775.425
@@ -21,9 +22,10 @@ $grp AISpawnerEntity {
   PeriodicQueries 1
   UpdatePeriod 0.5
   m_aEntitySpawnSlots {
-   "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et" "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et"
+   "{F1CFB248C6448F05}Prefabs/Groups/BLUFOR/Group_US_PistolTeam.et" "{016400988C331161}Prefabs/Groups/OPFOR/Group_USSR_PistolTeam.et"
   }
   m_fSpawnCount 8
+  m_bRandomChoose 0
  }
 }
 $grp DAD_LootboxRadiusEntity {
@@ -41,25 +43,11 @@ $grp DAD_LootboxRadiusEntity {
   m_fSpawnCount 8
   m_eLootbox "{53506DCB398C7EBE}Prefabs/Props/Furniture/Table_01.et"
  }
- ItemsCommon1 {
-  coords 11339.271 93.277 11279.496
-  TriggerShapeType Sphere
-  SphereRadius 303.1
-  ShapeColor 0.02 0 0.502 1
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 0.5
-  m_aEntitySpawnSlots {
-   "{61D4F80E49BF9B12}Prefabs/Items/Equipment/Compass/Compass_SY183.et" "{61D4F80E49BF9B12}Prefabs/Items/Equipment/Compass/Compass_SY183.et" "{C98FCC6CA6C56069}Prefabs/Items/Medicine/AspirinBottle.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et" "{C3F1FA1E2EC2B345}Prefabs/Items/Medicine/FieldDressing_USSR_01.et" "{CDCC313B2FB76FE7}Prefabs/Items/Medicine/Gauze_01.et" "{50A68300B537EDFA}Prefabs/Items/Food/ArmyCrackers_Soviet_01.et" "{EB21D26B8D5A3232}Prefabs/Items/Food/MRE.et" "{9CCB46C6EE632C1A}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et" "{627255315038152A}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_SpecialBall.et" "{2EBF60EF24B108FC}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_Ball.et" "{5897D01F41DB5D2D}Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Tracer.et" "{E5E9C5897CF47F44}Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_4Ball_1Tracer.et" "{4D2C1E8F3A81F894}Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_4Ball_1Tracer.et" "{FA5C25BF66A53DCF}Prefabs/Weapons/Rifles/AK74/Rifle_AK74.et" "{63E8322E2ADD4AA7}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_GP25.et" "{B1482FB64E3D2D45}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_4x20.et" "{B1482FB64E3D2D45}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_4x20.et" "{5A987A8A13763769}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_M203.et" "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et" "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et" "{3EB02CDAD5F23C82}Prefabs/Weapons/Rifles/SVD/Rifle_SVD.et" "{D2B48DEBEF38D7D7}Prefabs/Weapons/MachineGuns/M249/MG_M249.et" "{D182DCDD72BF7E34}Prefabs/Weapons/MachineGuns/M60/MG_M60.et" "{A89BC9D55FFB4CD8}Prefabs/Weapons/MachineGuns/PKM/MG_PKM.et" "{A7AF84C6C58BA3E8}Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74.et" "{E8F00BF730225B00}Prefabs/Weapons/Grenades/Grenade_M67.et" "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et" "{3343A055A83CB30D}Prefabs/Weapons/Grenades/M18/Smoke_M18_Red.et" "{D41D22DD1B8E921E}Prefabs/Weapons/Grenades/M18/Smoke_M18_Green.et" "{14C1A0F061D9DDEE}Prefabs/Weapons/Grenades/M18/Smoke_M18_Violet.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et"
-  }
-  m_fSpawnCount 40
-  m_eLootbox "{7A4A0A8283210784}Prefabs/Compositions/Misc/SubCompositions/TableMilitary_Cluttered_US_01.et"
- }
- ItemsVeryCommon1 {
-  coords 11339.271 -21.524 11279.496
+ ItemsVeryCommon2 {
+  coords 11074.502 38.055 11775.425
   Flags 2097155
   TriggerShapeType Sphere
-  SphereRadius 303.7
+  SphereRadius 381.8
   DrawShape 1
   ShapeColor 0.02 0 0.502 1
   TriggerActivationType "First change"
@@ -70,34 +58,6 @@ $grp DAD_LootboxRadiusEntity {
   }
   m_fSpawnCount 50
   m_eLootbox "{1A1020205E2B1710}Prefabs/Props/Military/Furniture/TableMilitary_USSR_01.et"
- }
- ItemsVeryCommon2 {
-  coords 11074.502 38.055 11775.425
-  TriggerShapeType Sphere
-  SphereRadius 381.8
-  ShapeColor 0.02 0 0.502 1
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 0.5
-  m_aEntitySpawnSlots {
-   "{1353C6EAD1DCFE43}Prefabs/Weapons/Handguns/M9/Handgun_M9.et" "{C0F7DD85A86B2900}Prefabs/Weapons/Handguns/PM/Handgun_PM.et" "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et" "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et" "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et" "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et" "{9C05543A503DB80E}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et" "{9C05543A503DB80E}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et" "{9C05543A503DB80E}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et" "{9C05543A503DB80E}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et" "{BBB50A815A2F916B}Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Ball.et" "{BBB50A815A2F916B}Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Ball.et" "{2EBF60EF24B108FC}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_Ball.et" "{D8F2CA92583B23D3}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_Last_5Tracer.et" "{9CCB46C6EE632C1A}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et" "{A6737DA00653A39C}Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Ball.et" "{982F5BA41A3738CF}Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Ball.et" "{BFD6872B1C069136}Prefabs/Weapons/Magazines/Box_145x114_KPVT_50rnd_API.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et"
-  }
-  m_fSpawnCount 50
-  m_eLootbox "{1A1020205E2B1710}Prefabs/Props/Military/Furniture/TableMilitary_USSR_01.et"
- }
- ItemsUncommon1 {
-  coords 11339.271 74.461 11279.496
-  TriggerShapeType Sphere
-  SphereRadius 303.1
-  ShapeColor 0.02 0 0.502 1
-  TriggerActivationType "First change"
-  PeriodicQueries 1
-  UpdatePeriod 0.5
-  m_aEntitySpawnSlots {
-   "{F2539FA5706E51E4}Prefabs/Items/Equipment/Binoculars/Binoculars_B12.et" "{0CF54B9A85D8E0D4}Prefabs/Items/Equipment/Binoculars/Binoculars_M22.et" "{3A421547BC29F679}Prefabs/Items/Equipment/Flashlights/Flashlight_MX991.et" "{575EA58E67448C2A}Prefabs/Items/Equipment/Flashlights/Flashlight_Soviet_01.et" "{6FD6C96121905202}Prefabs/Items/Equipment/Watches/Watch_Vostok.et" "{78ED4FEF62BBA728}Prefabs/Items/Equipment/Watches/Watch_SandY184A.et" "{5C5C6EE05EE2FF1A}Prefabs/Items/Equipment/Backpacks/Backpack_ALICE_Medium_assembled.et" "{6A39B5843B3F36DA}Prefabs/Items/Equipment/Backpacks/Backpack_RPG_Assistant.et" "{FDA7B6630DB87991}Prefabs/Items/Equipment/Backpacks/Backpack_M70_Swiss.et" "{D2018EDB1BBF4C88}Prefabs/Weapons/Attachments/Optics/Optic_ARTII.et" "{C850A33226B8F9C1}Prefabs/Weapons/Attachments/Optics/Optic_PSO1.et" "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et" "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et"
-  }
-  m_fSpawnCount 10
-  m_eLootbox "{D349CAB0A6544C59}Prefabs/Props/Furniture/TableWorkshop_01_short.et"
  }
 }
 DAD_SpawnRadiusEntity ItemsVeryRare {
@@ -113,6 +73,72 @@ DAD_SpawnRadiusEntity ItemsVeryRare {
  }
  m_fSpawnCount 3
 }
+GenericEntity Items_Bundle_Regular_1 {
+ coords 11339.271 -22.641 11279.496
+ {
+  $grp DAD_LootboxRadiusEntity {
+   ItemsCommon1 {
+    coords 0 0 0
+    TriggerShapeType Sphere
+    SphereRadius 303.1
+    ShapeColor 0.02 0 0.502 1
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 0.5
+    m_aEntitySpawnSlots {
+     "{61D4F80E49BF9B12}Prefabs/Items/Equipment/Compass/Compass_SY183.et" "{61D4F80E49BF9B12}Prefabs/Items/Equipment/Compass/Compass_SY183.et" "{C98FCC6CA6C56069}Prefabs/Items/Medicine/AspirinBottle.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et" "{C3F1FA1E2EC2B345}Prefabs/Items/Medicine/FieldDressing_USSR_01.et" "{CDCC313B2FB76FE7}Prefabs/Items/Medicine/Gauze_01.et" "{50A68300B537EDFA}Prefabs/Items/Food/ArmyCrackers_Soviet_01.et" "{EB21D26B8D5A3232}Prefabs/Items/Food/MRE.et" "{9CCB46C6EE632C1A}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et" "{627255315038152A}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_SpecialBall.et" "{2EBF60EF24B108FC}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_Ball.et" "{5897D01F41DB5D2D}Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Tracer.et" "{E5E9C5897CF47F44}Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_4Ball_1Tracer.et" "{4D2C1E8F3A81F894}Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_4Ball_1Tracer.et" "{FA5C25BF66A53DCF}Prefabs/Weapons/Rifles/AK74/Rifle_AK74.et" "{63E8322E2ADD4AA7}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_GP25.et" "{B1482FB64E3D2D45}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_4x20.et" "{B1482FB64E3D2D45}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_4x20.et" "{5A987A8A13763769}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_M203.et" "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et" "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et" "{3EB02CDAD5F23C82}Prefabs/Weapons/Rifles/SVD/Rifle_SVD.et" "{D2B48DEBEF38D7D7}Prefabs/Weapons/MachineGuns/M249/MG_M249.et" "{D182DCDD72BF7E34}Prefabs/Weapons/MachineGuns/M60/MG_M60.et" "{A89BC9D55FFB4CD8}Prefabs/Weapons/MachineGuns/PKM/MG_PKM.et" "{A7AF84C6C58BA3E8}Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74.et" "{E8F00BF730225B00}Prefabs/Weapons/Grenades/Grenade_M67.et" "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et" "{3343A055A83CB30D}Prefabs/Weapons/Grenades/M18/Smoke_M18_Red.et" "{D41D22DD1B8E921E}Prefabs/Weapons/Grenades/M18/Smoke_M18_Green.et" "{14C1A0F061D9DDEE}Prefabs/Weapons/Grenades/M18/Smoke_M18_Violet.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et"
+    }
+    m_fSpawnCount 40
+    m_eLootbox "{7A4A0A8283210784}Prefabs/Compositions/Misc/SubCompositions/TableMilitary_Cluttered_US_01.et"
+   }
+   ItemsVeryCommon1 {
+    coords 0 0 0
+    TriggerShapeType Sphere
+    SphereRadius 303.1
+    ShapeColor 0.02 0 0.502 1
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 0.5
+    m_aEntitySpawnSlots {
+     "{1353C6EAD1DCFE43}Prefabs/Weapons/Handguns/M9/Handgun_M9.et" "{C0F7DD85A86B2900}Prefabs/Weapons/Handguns/PM/Handgun_PM.et" "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et" "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et" "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et" "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et" "{9C05543A503DB80E}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et" "{9C05543A503DB80E}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et" "{9C05543A503DB80E}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et" "{9C05543A503DB80E}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et" "{BBB50A815A2F916B}Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Ball.et" "{BBB50A815A2F916B}Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Ball.et" "{2EBF60EF24B108FC}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_Ball.et" "{D8F2CA92583B23D3}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_Last_5Tracer.et" "{9CCB46C6EE632C1A}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et" "{A6737DA00653A39C}Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Ball.et" "{982F5BA41A3738CF}Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Ball.et" "{BFD6872B1C069136}Prefabs/Weapons/Magazines/Box_145x114_KPVT_50rnd_API.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et"
+    }
+    m_fSpawnCount 50
+    m_eLootbox "{1A1020205E2B1710}Prefabs/Props/Military/Furniture/TableMilitary_USSR_01.et"
+   }
+   ItemsUncommon1 {
+    coords 0 0 0
+    TriggerShapeType Sphere
+    SphereRadius 303.1
+    ShapeColor 0.02 0 0.502 1
+    TriggerActivationType "First change"
+    PeriodicQueries 1
+    UpdatePeriod 0.5
+    m_aEntitySpawnSlots {
+     "{F2539FA5706E51E4}Prefabs/Items/Equipment/Binoculars/Binoculars_B12.et" "{0CF54B9A85D8E0D4}Prefabs/Items/Equipment/Binoculars/Binoculars_M22.et" "{3A421547BC29F679}Prefabs/Items/Equipment/Flashlights/Flashlight_MX991.et" "{575EA58E67448C2A}Prefabs/Items/Equipment/Flashlights/Flashlight_Soviet_01.et" "{6FD6C96121905202}Prefabs/Items/Equipment/Watches/Watch_Vostok.et" "{78ED4FEF62BBA728}Prefabs/Items/Equipment/Watches/Watch_SandY184A.et" "{5C5C6EE05EE2FF1A}Prefabs/Items/Equipment/Backpacks/Backpack_ALICE_Medium_assembled.et" "{6A39B5843B3F36DA}Prefabs/Items/Equipment/Backpacks/Backpack_RPG_Assistant.et" "{FDA7B6630DB87991}Prefabs/Items/Equipment/Backpacks/Backpack_M70_Swiss.et" "{D2018EDB1BBF4C88}Prefabs/Weapons/Attachments/Optics/Optic_ARTII.et" "{C850A33226B8F9C1}Prefabs/Weapons/Attachments/Optics/Optic_PSO1.et" "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et" "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et"
+    }
+    m_fSpawnCount 10
+    m_eLootbox "{D349CAB0A6544C59}Prefabs/Props/Furniture/TableWorkshop_01_short.et"
+   }
+  }
+ }
+}
+GenericEntity : "{29308D87EE39C21E}Prefabs/ItemSpawns/Items_Bundle_Regular.et" {
+ coords 11074.502 38.055 11775.425
+ {
+  DAD_LootboxRadiusEntity {
+   ID "59F813061C72A3D8"
+   SphereRadius 381.8
+  }
+  DAD_LootboxRadiusEntity {
+   ID "59F813061C72A3D9"
+   SphereRadius 381.8
+  }
+  DAD_LootboxRadiusEntity {
+   ID "59F813061C72A3DE"
+   SphereRadius 381.8
+  }
+ }
+}
 SCR_EditorTask : "{3AD0A1257870E6C7}Prefabs/Tasks/CustomTask.et" {
  components {
   SCR_MapDescriptorComponent "{54C6755D2955E709}" {
@@ -122,7 +148,6 @@ SCR_EditorTask : "{3AD0A1257870E6C7}Prefabs/Tasks/CustomTask.et" {
   }
  }
  coords 11199.748 33.857 11444.799
- Flags 2097155
  m_sName "Good Items here!"
  m_sDescription "Come and get some great items!"
  m_TextType CUSTOM

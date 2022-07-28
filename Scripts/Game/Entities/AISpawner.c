@@ -1,22 +1,16 @@
 class AISpawnerEntityClass: DAD_SpawnRadiusEntityClass
 {
-	
 }
 
 class AISpawnerEntity: DAD_SpawnRadiusEntity 
 {
 	protected ref array<DAD_GroupSpawnPoint> m_SpawnPoints;
 	protected static int m_iGroupID = 0;
-	
-	private void CreateSpawns()
-	{
-	
-	}
 
 	override void OnActivate(IEntity ent)
 	{
-		Resource us   = Resource.Load("{63F01153A435D2BD}Prefabs/SpawnUS.et");
-		Resource ussr = Resource.Load("{63F01153A435D2BD}Prefabs/SpawnUSSR.et");
+		Resource us   = Resource.Load("{63F01153A435D2BD}Prefabs/MP/Spawning/GroupSpawn_US.et");
+		Resource ussr = Resource.Load("{072634CA772ACF5A}Prefabs/MP/Spawning/GroupSpawn_USSR.et");
 		
 		super.OnActivate(ent);
 		

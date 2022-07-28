@@ -1,9 +1,14 @@
 $grp SCR_FactionControlTriggerEntity {
  VictoryConditionUS {
-  coords 11203.813 0 11646.876
+  coords 11203.813 27.372 11646.876
   angleY -31.8
-  userScript "	// code here"\
-  ""
+  userScript "	static bool m_bActivated = false;"\
+  "	"\
+  "	void Victory()"\
+  "	{"\
+  "		if (m_bActivated)"\
+  "			GenericHelpers.FactionWin(this.m_OwnerFaction);"\
+  "	}"
   TriggerShapeType Sphere
   SphereRadius 1000
   BoxMins -650 -200 -750
@@ -13,24 +18,27 @@ $grp SCR_FactionControlTriggerEntity {
   PeriodicQueries 1
   UpdatePeriod 5
   OnActivate ""\
-  "		Print(this.GetSphereRadius());"\
-  "		int factionIndex = GetGame().GetFactionManager().GetFactionIndex(m_OwnerFaction);"\
+  "		m_bActivated = true;	"\
+  "		Print(\"USSR Control Activated \" + this.GetSphereRadius());"\
   "		"\
-  "		auto gameMode = SCR_BaseGameMode.Cast(GetGame().GetGameMode());"\
-  "		gameMode.EndGameMode("\
-  "				SCR_GameModeEndData.CreateSimple(SCR_GameModeEndData.ENDREASON_EDITOR_FACTION_VICTORY, -1, factionIndex)"\
-  "		);"\
+  "		GetGame().GetCallqueue().CallLater(Victory, 2000);"\
   "	"
   OnDeactivate ""\
-  "		Print(\"deactivated\");"\
+  "		m_bActivated = false;"\
+  "		Print(\"USSR Control Deactivated\");"\
   "	"
   m_sOwnerFactionKey "US"
   m_fFriendlyRatioLimit 1
  }
  VictoryConditionUSSR {
-  coords 11203.813 0 11646.876
-  userScript "	// code here"\
-  ""
+  coords 11203.813 27.372 11646.876
+  userScript "	static bool m_bActivated = false;"\
+  "	"\
+  "	void Victory()"\
+  "	{"\
+  "		if (m_bActivated)"\
+  "			GenericHelpers.FactionWin(this.m_OwnerFaction);"\
+  "	}"
   TriggerShapeType Sphere
   SphereRadius 1000
   BoxMins -650 -200 -750
@@ -40,16 +48,14 @@ $grp SCR_FactionControlTriggerEntity {
   PeriodicQueries 1
   UpdatePeriod 5
   OnActivate ""\
-  "		SCR_FactionControlTriggerEntity trigger = SCR_FactionControlTriggerEntity.Cast(ent);"\
-  "		int factionIndex = GetGame().GetFactionManager().GetFactionIndex(trigger.m_OwnerFaction);"\
-  "		Print(this.GetSphereRadius());"\
-  "		auto gameMode = SCR_BaseGameMode.Cast(GetGame().GetGameMode());"\
-  "		gameMode.EndGameMode("\
-  "				SCR_GameModeEndData.CreateSimple(SCR_GameModeEndData.ENDREASON_EDITOR_FACTION_VICTORY, -1, factionIndex)"\
-  "		);"\
+  "		m_bActivated = true;	"\
+  "		Print(\"USSR Control Activated \" + this.GetSphereRadius());"\
+  "		"\
+  "		GetGame().GetCallqueue().CallLater(Victory, 2000);"\
   "	"
   OnDeactivate ""\
-  "		/* code here */"\
+  "		m_bActivated = false;"\
+  "		Print(\"USSR Control Deactivated\");"\
   "	"
   m_sOwnerFactionKey "USSR"
   m_fFriendlyRatioLimit 1
@@ -270,6 +276,7 @@ SCR_SpawnPoint : "{4FEA25583D0975F7}Prefabs/MP/Spawning/SpawnPoint_USSR.et" {
   }
  }
  coords 10908.911 15.385 8556.857
+ Flags 2097155
  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
   Name "Green Beans"
   Description "Buy 'em here!"

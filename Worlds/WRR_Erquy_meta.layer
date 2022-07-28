@@ -27,7 +27,6 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
    m_iReceiveKillFeedType ALL
   }
   SCR_RespawnMenuHandlerComponent "{59CC387546D47B87}" {
-   m_bAllowLoadoutSelection 0
   }
   SCR_RespawnTimerComponent "{59CC3874D1686C96}" {
    m_fRespawnTime 5
@@ -41,12 +40,15 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  angleY 117.883
  EOnFrame ""\
  "		World w = GetGame().GetWorld();"\
- ""\
  "		auto usTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
- "		float lastRadius = usTrigger.GetSphereRadius();"\
- "		float radius = lastRadius - (timeSlice * 1);"\
- "		usTrigger.SetSphereRadius(radius);"\
  "		auto ussrTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUSSR\"));"\
+ "		"\
+ "		float lastRadius = usTrigger.GetSphereRadius();"\
+ "		float delta = (timeSlice * 8);"\
+ "		"\
+ "		float radius = lastRadius - delta;"\
+ "		usTrigger.SetSphereRadius(radius);"\
+ ""\
  "		ussrTrigger.SetSphereRadius(radius);"\
  "		"\
  "		float scale = radius / lastRadius;"\
@@ -57,7 +59,7 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		vector transform[4];"\
  "		barrier.GetWorldTransform(transform);"\
  "		if (!transform) return;"\
- "		transform[3] = transform[3] + (\"0 0.03 0\" * timeSlice); // slightly raise because origin is below ground"\
+ "		transform[3] = transform[3] + (\"0 0.16 0\" * delta); // slightly raise because origin is below ground"\
  "		SCR_Math3D.ScaleMatrix(transform, scale);"\
  ""\
  "		barrier.SetWorldTransform(transform);"\
@@ -97,6 +99,48 @@ SCR_LoadoutManager : "{97EF4C1A41F63DDB}Prefabs/MP/Managers/Loadouts/LoadoutMana
  coords 10341.33 13.292 12030.652
  angleX -5.573
  angleY 103.683
+ m_aPlayerLoadouts {
+  SCR_FactionPlayerLoadout "{56B2B4613DCD3341}" {
+   m_sAffiliatedFaction ""
+  }
+  SCR_FactionPlayerLoadout "{59F8130A6BDA75E8}" {
+   m_sLoadoutName "USSR"
+   m_sLoadoutResource "{E4DE47895BD6B650}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Pistol.et"
+   m_sAffiliatedFaction "USSR"
+  }
+  SCR_FactionPlayerLoadout "{56B2B4613FB900E5}" {
+   m_sAffiliatedFaction ""
+  }
+  SCR_FactionPlayerLoadout "{56B2B461341EA370}" {
+   m_sAffiliatedFaction ""
+  }
+  SCR_FactionPlayerLoadout "{56B2B46134D39388}" {
+   m_sAffiliatedFaction ""
+  }
+  SCR_FactionPlayerLoadout "{56B2B4613581570A}" {
+   m_sAffiliatedFaction ""
+  }
+  SCR_FactionPlayerLoadout "{56B2B461C7495F41}" {
+   m_sAffiliatedFaction ""
+  }
+  SCR_FactionPlayerLoadout "{56B2B461C047DCDA}" {
+   m_sAffiliatedFaction ""
+  }
+  SCR_FactionPlayerLoadout "{56B2B461C275B309}" {
+   m_sAffiliatedFaction ""
+  }
+  SCR_FactionPlayerLoadout "{56B2B461C34A570F}" {
+   m_sAffiliatedFaction ""
+  }
+  SCR_FactionPlayerLoadout "{56B2B4613C48D08E}" {
+   m_sAffiliatedFaction ""
+  }
+  SCR_FactionPlayerLoadout "{59F77E54F9FCBED1}" {
+   m_sLoadoutName "US"
+   m_sLoadoutResource "{E4DE47895BD6B650}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Pistol.et"
+   m_sAffiliatedFaction "US"
+  }
+ }
 }
 GarbageManager : "{9B883A7D8EBB282A}Prefabs/MP/Managers/GarbageManager.et" {
  coords 10338.279 13.556 12031.79

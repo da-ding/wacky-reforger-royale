@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{29308D87EE39C21E}Prefabs/ItemSpawns/Items_Bundle_Regular.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}
