@@ -28,8 +28,13 @@ class AISpawnerEntity: DAD_SpawnRadiusEntity
 
 			DAD_GroupSpawnPoint spawn = DAD_GroupSpawnPoint.Cast(SpawnHelpers.SpawnEntity(res, group.GetOrigin()));
 
+			LocalizedString name = group.GetName();
+			SCR_UIInfo info = SCR_UIInfo.CreateInfo(name);
+			spawn.LinkInfo(info);
+
 			spawn.SetFactionKey(fac);
 			spawn.SetGroup(group);
+			spawn.LinkInfo(info);
 		}
 	}
 

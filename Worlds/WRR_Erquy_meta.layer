@@ -27,6 +27,8 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
    m_iReceiveKillFeedType ALL
   }
   SCR_RespawnMenuHandlerComponent "{59CC387546D47B87}" {
+   m_bAllowFactionChange 0
+   m_bAllowLoadoutSelection 0
   }
   SCR_RespawnTimerComponent "{59CC3874D1686C96}" {
    m_fRespawnTime 5
@@ -109,7 +111,7 @@ SCR_LoadoutManager : "{97EF4C1A41F63DDB}Prefabs/MP/Managers/Loadouts/LoadoutMana
   }
   SCR_FactionPlayerLoadout "{59F8130A6BDA75E8}" {
    m_sLoadoutName "USSR"
-   m_sLoadoutResource "{E4DE47895BD6B650}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Pistol.et"
+   m_sLoadoutResource "{814A00A63A64E8B4}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Pistol.et"
    m_sAffiliatedFaction "USSR"
   }
   SCR_FactionPlayerLoadout "{56B2B4613FB900E5}" {

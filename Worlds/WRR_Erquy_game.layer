@@ -267,25 +267,3 @@ SCR_DestructibleBuildingEntity Barrier : "{3299E6F34CE40185}Prefabs/Structures/A
  }
  m_fMinUndamagedThreshold 4772.5
 }
-SCR_SpawnPoint : "{4FEA25583D0975F7}Prefabs/MP/Spawning/SpawnPoint_USSR.et" {
- components {
-  SCR_MapDescriptorComponent "{54C659A97C47BDE2}" {
-   DisplayName "Potate"
-   VisibleOnMap 1
-   ShowTerrainElevation 1
-  }
- }
- coords 10908.911 15.385 8556.857
- Flags 2097155
- m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
-  Name "Green Beans"
-  Description "Buy 'em here!"
- }
-}
-SCR_SpawnPoint : "{5A2220DD0C16958B}Prefabs/MP/Spawning/SpawnPoint_US.et" {
- coords 10842.232 5.627 8536.731
- Flags 2097155
- m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
-  Name "CHANGED NAME"
- }
-}
