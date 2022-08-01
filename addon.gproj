@@ -1,20 +1,8 @@
 GameProject {
  ID "Wacky Reforger Royale"
- GUID "59E254AA82D6CC5D"
+ GUID "59DAD00000000001"
  TITLE "Wacky Reforger Royale"
  Dependencies {
-  "59CA960A4388AA84" "58D0FB3206B6F859" "5614BBCCBB55ED1C"
- }
- Configurations {
-  GameProjectConfig PC {
-  }
-  GameProjectConfig XBOX_ONE {
-  }
-  GameProjectConfig XBOX_SERIES {
-  }
-  GameProjectConfig PS4 {
-  }
-  GameProjectConfig HEADLESS {
-  }
+  "59DAD00000000000" "58D0FB3206B6F859" "5614BBCCBB55ED1C"
  }
 }
