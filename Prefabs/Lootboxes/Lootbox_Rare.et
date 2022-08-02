@@ -1,0 +1,9 @@
+GenericEntity : "{53506DCB398C7EBE}Prefabs/Props/Furniture/Table_01.et" {
+ ID "6093E737D38D6C5A"
+ components {
+  RplComponent "{5624A88DC2D9928D}" {
+   Enabled 1
+  }
+ }
+ coords 11055.973 28.275 11647.052
+}

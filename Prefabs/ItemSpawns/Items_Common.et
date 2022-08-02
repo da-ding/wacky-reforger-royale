@@ -1,8 +1,7 @@
 DAD_LootboxRadiusEntity {
  ID "59F81306BAA0E2E0"
- coords 11339.271 -22.641 11279.496
  TriggerShapeType Sphere
- SphereRadius 303.1
+ SphereRadius 100
  ShapeColor 0.02 0 0.502 1
  TriggerActivationType "First change"
  PeriodicQueries 1

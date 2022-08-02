@@ -1,0 +1,10 @@
+StaticModelEntity : "{1A1020205E2B1710}Prefabs/Props/Military/Furniture/TableMilitary_USSR_01.et" {
+ ID "5272E314F01B2DBE"
+ components {
+  RplComponent "{5624A88DC2D9928D}" {
+   Enabled 1
+  }
+ }
+ coords 11061.891 28.534 11645.16
+ angleY 0
+}

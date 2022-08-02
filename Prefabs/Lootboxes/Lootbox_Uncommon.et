@@ -1,0 +1,9 @@
+GenericEntity : "{D349CAB0A6544C59}Prefabs/Props/Furniture/TableWorkshop_01_short.et" {
+ ID "52087D2840CF2035"
+ components {
+  RplComponent "{5624A88DC2D9928D}" {
+   Enabled 1
+  }
+ }
+ coords 11058.545 28.392 11646.335
+}
