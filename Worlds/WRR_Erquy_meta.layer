@@ -41,6 +41,7 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  angleX -4.627
  angleY 117.883
  userScript "	IEntity m_eBarrier;"\
+ "	AIWaypoint m_eWaypoint;"\
  "	"\
  "	void ScaleBarrier(float timeSlice)"\
  "	{"\
@@ -52,9 +53,11 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		float delta = (timeSlice * 1.5);"\
  "		"\
  "		float radius = lastRadius - delta;"\
+ "		"\
  "		usTrigger.SetSphereRadius(radius);"\
- ""\
  "		ussrTrigger.SetSphereRadius(radius);"\
+ "		m_eWaypoint.SetCompletionRadius(radius / 2);"\
+ "		m_eWaypoint.Update();"\
  "		"\
  "		float scale = radius / lastRadius;"\
  ""\
@@ -75,9 +78,18 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		super.EOnPostFrame(owner, timeSlice);"\
  "	"
  OnGameStart ""\
+ "		RplComponent rplC = RplComponent.Cast(FindComponent(RplComponent));"\
+ "		if (!rplC || !rplC.IsOwner()) return;"\
+ "		"\
+ "		World w = GetGame().GetWorld();"\
+ "		SCR_FactionControlTriggerEntity usTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
+ "		Resource scoutRes = Resource.Load(\"{A88F0B6CF25BD1DE}Prefabs/AI/Waypoints/AIWaypoint_Scout.et\");"\
+ "		m_eWaypoint = AIWaypoint.Cast(SpawnHelpers.SpawnEntity(scoutRes, usTrigger.GetOrigin()));"\
+ "		m_eWaypoint.SetName(\"BarrierWaypoint\");"\
+ "		"\
  "		super.OnGameStart();"\
  "		GetGame().GetCallqueue().CallLater(ScaleBarrier, 100, true, 0.1);"\
- "		m_eBarrier = IEntity.Cast(GetGame().GetWorld().FindEntityByName(\"Barrier\"));"\
+ "		m_eBarrier = w.FindEntityByName(\"Barrier\");"\
  "		GetGame().GetCallqueue().CallLater(m_eBarrier.Update, 500, true);"\
  "	"
  m_fBleedingRateScale 0.2
