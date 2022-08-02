@@ -1,0 +1,15 @@
+GenericEntity : "{2C303FA30DF3D73F}Prefabs/Props/Military/AmmoBoxes/US/EquipmentBoxWooden_Ammunition_01_US.et" {
+ components {
+  SCR_UniversalInventoryStorageComponent "{5476A2F100DF4EFF}" {
+   MultiSlots {
+    MultiSlotConfiguration "{5A04AE03D15ACF73}" {
+     SlotTemplate EquipmentStorageSlot F {
+      Prefab "{B386EEE8AED8E386}Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Tracer.et"
+     }
+     NumSlots 99
+    }
+   }
+  }
+ }
+ coords 11058.104 28.408 11644.927
+}

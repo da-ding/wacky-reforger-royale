@@ -9,14 +9,13 @@ class AISpawnerEntity: DAD_SpawnRadiusEntity
 
 	override void OnActivate(IEntity ent)
 	{
+		if (!Replication.IsServer()) return;
+
+		
 		Resource us   = Resource.Load("{63F01153A435D2BD}Prefabs/MP/Spawning/GroupSpawn_US.et");
 		Resource ussr = Resource.Load("{072634CA772ACF5A}Prefabs/MP/Spawning/GroupSpawn_USSR.et");
 
 		super.OnActivate(ent);
-
-		RplComponent rplC = RplComponent.Cast(this.FindComponent(RplComponent));
-		if ((rplC && !rplC.IsOwner()) || !Replication.IsServer())
-			return;
 
 		foreach (int i, IEntity e : m_Entities)
 		{

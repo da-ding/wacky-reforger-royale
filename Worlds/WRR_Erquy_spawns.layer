@@ -45,7 +45,7 @@ DAD_LootboxRadiusEntity ItemsRare {
   "{0AA94C2082A4A3A0}Prefabs/Systems/Arsenal/AmmoBoxes/FIA/AmmoBoxArsenal_Medical_FIA.et" "{891EF8A5FB7162F1}Prefabs/Systems/Arsenal/AmmoBoxes/US/AmmoBoxArsenal_Medical_US.et" "{723870DBB19D30B0}Prefabs/Weapons/Tripods/Tripod_6T5_PKM.et" "{887DB60486A18575}Prefabs/Weapons/Tripods/Tripod_M122_MG_M60.et" "{73530808E4B455BA}Prefabs/Weapons/Tripods/Tripod_M3_M2HB.et"
  }
  m_fSpawnCount 8
- m_eLootbox "{53506DCB398C7EBE}Prefabs/Props/Furniture/Table_01.et"
+ m_eLootbox "{B60940490B09EF8E}Prefabs/Lootboxes/Lootbox_Rare.et"
 }
 DAD_SpawnRadiusEntity ItemsVeryRare {
  coords 11197.374 70.309 11643.339

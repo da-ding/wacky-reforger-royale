@@ -43,33 +43,29 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  userScript "	IEntity m_eBarrier;"\
  "	AIWaypoint m_eWaypoint;"\
  "	"\
+ "	float m_fInitialTriggerRadius;"\
+ "	float m_fInitialBarrierScale;"\
+ "	"\
  "	void ScaleBarrier(float timeSlice)"\
  "	{"\
  "		World w = GetGame().GetWorld();"\
  "		SCR_FactionControlTriggerEntity usTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
  "		SCR_FactionControlTriggerEntity ussrTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUSSR\"));"\
  ""\
- "		float lastRadius = usTrigger.GetSphereRadius();"\
- "		float delta = (timeSlice * 1.5);"\
- "		"\
- "		float radius = lastRadius - delta;"\
+ "		float delta = (timeSlice * 10);"\
+ "		float radius = usTrigger.GetSphereRadius() - delta;"\
  "		"\
  "		usTrigger.SetSphereRadius(radius);"\
  "		ussrTrigger.SetSphereRadius(radius);"\
- "		m_eWaypoint.SetCompletionRadius(radius / 2);"\
- "		m_eWaypoint.Update();"\
+ "		m_eWaypoint.SetCompletionRadius(radius);"\
  "		"\
- "		float scale = radius / lastRadius;"\
- ""\
+ "		"\
+ "		float scale = radius / m_fInitialTriggerRadius;"\
+ "		"\
  "		if (!m_eBarrier) return;"\
- ""\
- "		vector transform[4];"\
- "		m_eBarrier.GetWorldTransform(transform);"\
- "		if (!transform) return;"\
- "		transform[3] = transform[3] + (\"0 0.15 0\" * delta); // slightly raise because origin is below ground"\
- "		SCR_Math3D.ScaleMatrix(transform, scale);"\
- ""\
- "		m_eBarrier.SetWorldTransform(transform);"\
+ "		m_eBarrier.SetScale(scale * m_fInitialBarrierScale);"\
+ "		// slightly raise because greenhouse origin is below ground"\
+ "		m_eBarrier.SetOrigin(m_eBarrier.GetOrigin() + (\"0 0.15 0\" * delta));"\
  "	}"
  EOnFrame ""\
  "		super.EOnFrame(owner, timeSlice);"\
@@ -83,16 +79,21 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		"\
  "		World w = GetGame().GetWorld();"\
  "		SCR_FactionControlTriggerEntity usTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
+ "		m_eBarrier = w.FindEntityByName(\"Barrier\");"\
+ "		"\
  "		Resource scoutRes = Resource.Load(\"{A88F0B6CF25BD1DE}Prefabs/AI/Waypoints/AIWaypoint_Scout.et\");"\
  "		m_eWaypoint = AIWaypoint.Cast(SpawnHelpers.SpawnEntity(scoutRes, usTrigger.GetOrigin()));"\
  "		m_eWaypoint.SetName(\"BarrierWaypoint\");"\
  "		"\
+ "		m_fInitialTriggerRadius = usTrigger.GetSphereRadius();"\
+ "		m_fInitialBarrierScale  = m_eBarrier.GetScale();"\
+ "		"\
  "		super.OnGameStart();"\
- "		GetGame().GetCallqueue().CallLater(ScaleBarrier, 100, true, 0.1);"\
- "		m_eBarrier = w.FindEntityByName(\"Barrier\");"\
+ "		const float tick = 1 / 16;"\
+ "		GetGame().GetCallqueue().CallLater(ScaleBarrier, tick * 1000, true, tick);"\
  "		GetGame().GetCallqueue().CallLater(m_eBarrier.Update, 500, true);"\
  "	"
- m_fBleedingRateScale 0.2
+ m_fBleedingRateScale 0.4
 }
 TagManager : "{2FA9E172CAB1857A}Prefabs/MP/Managers/TagManager.et" {
  coords 10343.464 13.056 12030.378
