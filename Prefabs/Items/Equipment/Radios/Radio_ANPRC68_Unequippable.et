@@ -1,0 +1,14 @@
+GenericEntity : "{73950FBA2D7DB5C5}Prefabs/Items/Equipment/Radios/Radio_ANPRC68.et" {
+ ID "508AB2013EEE1E00"
+ components {
+  InventoryItemComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    m_bDraggable 0
+   }
+  }
+  ActionsManagerComponent "{508AB5952B584B2E}" {
+   Enabled 0
+  }
+ }
+ coords 11176.737 32.729 11500.172
+}

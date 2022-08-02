@@ -52,7 +52,7 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		SCR_FactionControlTriggerEntity usTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
  "		SCR_FactionControlTriggerEntity ussrTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUSSR\"));"\
  ""\
- "		float delta = (timeSlice * 10);"\
+ "		float delta = (timeSlice * 1);"\
  "		float radius = usTrigger.GetSphereRadius() - delta;"\
  "		"\
  "		usTrigger.SetSphereRadius(radius);"\

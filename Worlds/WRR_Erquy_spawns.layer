@@ -114,6 +114,7 @@ SCR_EditorTask : "{3AD0A1257870E6C7}Prefabs/Tasks/CustomTask.et" {
   }
  }
  coords 11199.748 33.857 11444.799
+ Flags 2097155
  m_sName "Good Items here!"
  m_sDescription "Come and get some great items!"
  m_TextType CUSTOM

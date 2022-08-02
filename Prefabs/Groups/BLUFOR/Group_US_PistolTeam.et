@@ -8,6 +8,6 @@ SCR_AIGroup : "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et" {
  DangerEventRange 50
  DynamicSim_Lod1_distance 500
  m_aUnitPrefabSlots {
-  "{E4DE47895BD6B650}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Pistol.et" "{E4DE47895BD6B650}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Pistol.et" "{E4DE47895BD6B650}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Pistol.et"
+  "{DFD6693A71FDF903}Prefabs/Characters/Factions/BLUFOR/USArmy/Character_US_Pistol_WRR.et" "{DFD6693A71FDF903}Prefabs/Characters/Factions/BLUFOR/USArmy/Character_US_Pistol_WRR.et" "{DFD6693A71FDF903}Prefabs/Characters/Factions/BLUFOR/USArmy/Character_US_Pistol_WRR.et"
  }
 }

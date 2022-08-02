@@ -39,7 +39,7 @@ class AISpawnerEntity: DAD_SpawnRadiusEntity
 			spawn.SetGroup(group);
 			spawn.LinkInfo(info);
 
-			GetGame().GetCallqueue().CallLater(AddGroupToWaypoint, 5 * 60 * 1000, false, group);
+			GetGame().GetCallqueue().CallLater(AddGroupToWaypoint, 12 * 60 * 1000, false, group);
 		}
 	}
 	

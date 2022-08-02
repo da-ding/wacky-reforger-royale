@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{B4785B93B0A9A42E}Prefabs/Items/Equipment/Radios/Radio_ANPRC68_Unequippable.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

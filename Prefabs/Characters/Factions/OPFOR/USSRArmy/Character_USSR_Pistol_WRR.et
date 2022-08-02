@@ -1,0 +1,15 @@
+SCR_ChimeraCharacter : "{814A00A63A64E8B4}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Pistol.et" {
+ ID "528AED06AB0ECD29"
+ components {
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{56607B902B535037}" {
+     PrefabsToSpawn {
+      "{13772C903CB5E4F7}Prefabs/Items/Equipment/Maps/PaperMap_01_folded.et" "{C67994AF81D58223}Prefabs/Items/Equipment/Radios/Radio_R148_Unequippable.et"
+     }
+    }
+   }
+  }
+ }
+ coords 11177.826 32.823 11497.423
+}

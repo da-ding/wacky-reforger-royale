@@ -8,6 +8,6 @@ SCR_AIGroup : "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et" 
  DangerEventRange 50
  DynamicSim_Lod1_distance 500
  m_aUnitPrefabSlots {
-  "{814A00A63A64E8B4}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Pistol.et" "{814A00A63A64E8B4}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Pistol.et" "{814A00A63A64E8B4}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Pistol.et"
+  "{6A4D671F9F9A0D18}Prefabs/Characters/Factions/OPFOR/USSRArmy/Character_USSR_Pistol_WRR.et" "{6A4D671F9F9A0D18}Prefabs/Characters/Factions/OPFOR/USSRArmy/Character_USSR_Pistol_WRR.et" "{6A4D671F9F9A0D18}Prefabs/Characters/Factions/OPFOR/USSRArmy/Character_USSR_Pistol_WRR.et"
  }
 }
