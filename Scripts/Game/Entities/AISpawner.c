@@ -40,11 +40,14 @@ class AISpawnerEntity: DAD_SpawnRadiusEntity
 			spawn.SetGroup(group);
 			spawn.LinkInfo(info);
 
-			//----
-
+			GetGame().GetCallqueue().CallLater(AddGroupToWaypoint, 5 * 60 * 1000, false, group);
+		}
+	}
+	
+	static void AddGroupToWaypoint(SCR_AIGroup group)
+	{
 			AIWaypoint waypoint = AIWaypoint.Cast(GetGame().GetWorld().FindEntityByName("BarrierWaypoint"));
 			group.AddWaypoint(waypoint);
-		}
 	}
 
 };
