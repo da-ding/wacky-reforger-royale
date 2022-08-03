@@ -87,20 +87,9 @@ $grp GenericEntity : "{29308D87EE39C21E}Prefabs/ItemSpawns/Items_Bundle_Regular.
   coords 11339.271 -22.641 11279.496
   {
    DAD_LootboxRadiusEntity {
-    ID "59F813061C72A3D8"
-    coords 0 0 0
-    SphereRadius 303.2
-    m_fSpawnCount 60
-   }
-   DAD_LootboxRadiusEntity {
     ID "59F813061C72A3D9"
     SphereRadius 303.2
-    m_fSpawnCount 20
-   }
-   DAD_LootboxRadiusEntity {
-    ID "59F813061C72A3DE"
-    SphereRadius 303.2
-    m_fSpawnCount 80
+    m_fSpawnCount 30
    }
   }
  }

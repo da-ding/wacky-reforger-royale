@@ -4,6 +4,9 @@ SCR_AIGroup : "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et" 
   AIGroupSteeringComponent "{55C4E4E29127F05A}" {
    "Max Distance to Path" 5
   }
+  SCR_AIConfigComponent "{512CC1759AE69D6D}" {
+   m_Skill 0.725
+  }
  }
  DangerEventRange 50
  DynamicSim_Lod1_distance 500

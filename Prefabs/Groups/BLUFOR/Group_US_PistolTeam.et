@@ -1,8 +1,14 @@
 SCR_AIGroup : "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et" {
  ID "0000000000000001"
  components {
+  AIGroupMovementComponent "{55C4E4E28D6EA047}" {
+   ObstacleAvoidance 1
+  }
   AIGroupSteeringComponent "{55C4E4E29127F05A}" {
    "Max Distance to Path" 5
+  }
+  SCR_AIConfigComponent "{512CC1759AE69D6D}" {
+   m_Skill 0.739
   }
  }
  DangerEventRange 50
