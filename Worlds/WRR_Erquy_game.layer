@@ -1,65 +1,36 @@
-$grp SCR_FactionControlTriggerEntity {
- VictoryConditionUS {
-  coords 11203.813 27.372 11646.876
-  angleY -31.8
-  userScript "	static bool m_bActivated = false;"\
-  "	"\
-  "	void Victory()"\
-  "	{"\
-  "		if (m_bActivated)"\
-  "			GenericHelpers.FactionWin(this.m_OwnerFaction);"\
-  "	}"
-  TriggerShapeType Sphere
-  SphereRadius 1000
-  BoxMins -650 -200 -750
-  BoxMaxs 650 1100 750
-  ShapeColor 1 0.491 0 0.157
-  TriggerActivationType "Every query"
-  PeriodicQueries 1
-  UpdatePeriod 1
-  OnActivate ""\
-  "		if (m_bActivated) Victory();"\
-  "		"\
-  "		m_bActivated = true;		"\
-  "		Print(\"USSR Control Activated \" + this.GetSphereRadius());"\
-  "	"
-  OnDeactivate ""\
-  "		m_bActivated = false;"\
-  "		Print(\"USSR Control Deactivated\");"\
-  "	"
-  m_sOwnerFactionKey "US"
-  m_fFriendlyRatioLimit 1
- }
- VictoryConditionUSSR {
-  coords 11203.813 27.372 11646.876
-  userScript "	static bool m_bActivated = false;"\
-  "	"\
-  "	void Victory()"\
-  "	{"\
-  "		if (m_bActivated)"\
-  "			GenericHelpers.FactionWin(this.m_OwnerFaction);"\
-  "	}"
-  TriggerShapeType Sphere
-  SphereRadius 1000
-  BoxMins -650 -200 -750
-  BoxMaxs 650 1100 750
-  ShapeColor 1 0.491 0 0.157
-  TriggerActivationType "Every query"
-  PeriodicQueries 1
-  UpdatePeriod 1
-  OnActivate ""\
-  "		if (m_bActivated) Victory();"\
-  "		"\
-  "		m_bActivated = true;	"\
-  "		Print(\"USSR Control Activated \" + this.GetSphereRadius());"\
-  "	"
-  OnDeactivate ""\
-  "		m_bActivated = false;"\
-  "		Print(\"USSR Control Deactivated\");"\
-  "	"
-  m_sOwnerFactionKey "USSR"
-  m_fFriendlyRatioLimit 1
- }
+DAD_FactionControlTriggerEntity VictoryConditionUS {
+ coords 11203.813 27.372 11646.876
+ angleY -31.8
+ userScript "	static bool m_bActivated = false;"
+ TriggerShapeType Sphere
+ SphereRadius 1000
+ BoxMins -650 -200 -750
+ BoxMaxs 650 1100 750
+ DrawShape 1
+ ShapeColor 1 0.491 0 0.157
+ TriggerActivationType "Every query"
+ PeriodicQueries 1
+ UpdatePeriod 1
+ OnActivate ""\
+ "		DAD_FactionControlTriggerEntity trigger = DAD_FactionControlTriggerEntity.Cast(ent);"\
+ "		array<Faction> winningFactions = new array<Faction>();"\
+ "		trigger.GetTriggeredFactions(winningFactions);"\
+ "		"\
+ "		if (winningFactions.Count() != 1) return;"\
+ "		"\
+ "		//if (m_bActivated) "\
+ "			GenericHelpers.FactionWin(winningFactions.Get(0));"\
+ "		"\
+ "		"\
+ "		m_bActivated = true;		"\
+ "		Print(\"USSR Control Activated \" + this.GetSphereRadius());"\
+ "	"
+ OnDeactivate ""\
+ "		m_bActivated = false;"\
+ "		Print(\"USSR Control Deactivated\");"\
+ "	"
+ m_fInitialDelay 1
+ m_fFriendlyRatioLimit 1
 }
 SCR_DestructibleBuildingEntity Barrier : "{3299E6F34CE40185}Prefabs/Structures/Agriculture/Greenhouse/Greenhouse_01.et" {
  components {

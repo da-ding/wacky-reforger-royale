@@ -60,15 +60,23 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "	"\
  "	void SetBarrier()"\
  "	{"\
+ "				RplComponent rplC = RplComponent.Cast(FindComponent(RplComponent));"\
+ "		if (rplC.IsProxy()) Print(\"Proxy is running this code, too\");"\
+ "		if (Replication.IsClient()) Print(\"Is Client\");"\
+ "		if (Replication.IsRunning()) Print(\"Is Running\");"\
+ ""\
  "		IEntity barrier = GenericHelpers.GetEntity(m_rBarrier);"\
  "		if (barrier) m_eBarrier = barrier;"\
  "	}"\
  "	"\
  "	void UpdateBarrierEntity()"\
  "	{"\
- "		if (Replication.IsClient()) Print(\"This never Executes\");"\
- "		if (!m_eBarrier) return;"\
- "		if (Replication.IsClient()) Print(\"With the Barrier!\");"\
+ "		RplComponent rplC = RplComponent.Cast(FindComponent(RplComponent));"\
+ "		if (rplC.IsProxy()) Print(\"Proxy is running this code, too\");"\
+ "		if (Replication.IsClient()) Print(\"Is Client\");"\
+ "		if (Replication.IsRunning()) Print(\"Is Running\");"\
+ "		//if (Replication.IsServer()) Print(\"Is Server\");"\
+ "		//if (rplC.IsOwner()) Print(\"Is Owner\");"\
  ""\
  "		// Set the barrier size to a fraction of its initial size"\
  "		m_eBarrier.SetScale(m_fBarrierScale * m_fInitialBarrierScale);"\
@@ -79,19 +87,21 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "	"\
  "	void ScaleBarrier(float timeSlice)"\
  "	{"\
- "		//if (!Replication.IsServer()) return;"\
  "		RplComponent rplC = RplComponent.Cast(FindComponent(RplComponent));"\
+ "		if (rplC.IsProxy()) Print(\"Proxy is running this code, too\");"\
+ "		if (Replication.IsClient()) Print(\"Is Client\");"\
+ ""\
+ "		//if (!Replication.IsServer()) return;"\
+ "		//RplComponent rplC = RplComponent.Cast(FindComponent(RplComponent));"\
  "		if (!rplC || !rplC.IsOwner()) return;"\
  ""\
  "		World w = GetGame().GetWorld();"\
- "		SCR_FactionControlTriggerEntity usTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
- "		SCR_FactionControlTriggerEntity ussrTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUSSR\"));"\
+ "		DAD_FactionControlTriggerEntity usTrigger = DAD_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
  ""\
  "		float delta = (timeSlice * 10);"\
  "		float radius = usTrigger.GetSphereRadius() - delta;"\
  ""\
  "		usTrigger.SetSphereRadius(radius);"\
- "		ussrTrigger.SetSphereRadius(radius);"\
  "		if (m_eWaypoint)"\
  "			m_eWaypoint.SetCompletionRadius(radius);"\
  "		"\
@@ -106,18 +116,17 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  EOnPostFrame ""\
  "		super.EOnPostFrame(owner, timeSlice);"\
  "	"
- OnGameStart ""\
+ OnGameStart "		"\
+ "		super.OnGameStart();"\
+ "		"\
  "		RplComponent rplC = RplComponent.Cast(FindComponent(RplComponent));"\
  "		if (rplC.IsProxy()) Print(\"Proxy is running this code, too\");"\
  "		if (Replication.IsClient()) Print(\"Is Client\");"\
  "		if (Replication.IsRunning()) Print(\"Is Running\");"\
- "		//if (Replication.IsInherited()) Print(\"Is Inherited\");"\
- "		if (Replication.IsServer()) Print(\"Is Server\");"\
- "		if (rplC.IsOwner()) Print(\"Is Owner\");"\
  ""\
  "		World w = GetGame().GetWorld();"\
  "		m_eBarrier = w.FindEntityByName(\"Barrier\");"\
- "		SCR_FactionControlTriggerEntity usTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
+ "		DAD_FactionControlTriggerEntity usTrigger = DAD_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
  "		"\
  "		if (rplC && rplC.IsOwner())"\
  "		{"\
@@ -132,8 +141,7 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		}	"\
  "		m_fInitialTriggerRadius = usTrigger.GetSphereRadius();"\
  "		m_fInitialBarrierScale  = m_eBarrier.GetScale();"\
- "		"\
- "		super.OnGameStart();"\
+ ""\
  "		const float tick = 1 / 16;"\
  "		//const float tick = 2;"\
  ""\
