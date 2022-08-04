@@ -96,12 +96,13 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		if (!rplC || !rplC.IsOwner()) return;"\
  ""\
  "		World w = GetGame().GetWorld();"\
- "		DAD_FactionControlTriggerEntity usTrigger = DAD_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
+ "		DAD_FactionControlTriggerEntity trigger = DAD_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
  ""\
  "		float delta = (timeSlice * 10);"\
- "		float radius = usTrigger.GetSphereRadius() - delta;"\
+ "		float radius = trigger.GetSphereRadius() - delta;"\
  ""\
- "		usTrigger.SetSphereRadius(radius);"\
+ "		trigger.SetSphereRadius(radius);"\
+ "		"\
  "		if (m_eWaypoint)"\
  "			m_eWaypoint.SetCompletionRadius(radius);"\
  "		"\
@@ -126,7 +127,7 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  ""\
  "		World w = GetGame().GetWorld();"\
  "		m_eBarrier = w.FindEntityByName(\"Barrier\");"\
- "		DAD_FactionControlTriggerEntity usTrigger = DAD_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
+ "		DAD_FactionControlTriggerEntity trigger = DAD_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
  "		"\
  "		if (rplC && rplC.IsOwner())"\
  "		{"\
@@ -136,10 +137,10 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "			m_rBarrier = rplBarrier.Id();"\
  ""\
  "			Resource scoutRes = Resource.Load(\"{A88F0B6CF25BD1DE}Prefabs/AI/Waypoints/AIWaypoint_Scout.et\");"\
- "			m_eWaypoint = AIWaypoint.Cast(SpawnHelpers.SpawnEntity(scoutRes, usTrigger.GetOrigin()));"\
+ "			m_eWaypoint = AIWaypoint.Cast(SpawnHelpers.SpawnEntity(scoutRes, trigger.GetOrigin()));"\
  "			m_eWaypoint.SetName(\"BarrierWaypoint\");"\
  "		}	"\
- "		m_fInitialTriggerRadius = usTrigger.GetSphereRadius();"\
+ "		m_fInitialTriggerRadius = trigger.GetSphereRadius();"\
  "		m_fInitialBarrierScale  = m_eBarrier.GetScale();"\
  ""\
  "		const float tick = 1 / 16;"\

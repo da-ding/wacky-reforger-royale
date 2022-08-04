@@ -6,7 +6,6 @@ DAD_FactionControlTriggerEntity VictoryConditionUS {
  SphereRadius 1000
  BoxMins -650 -200 -750
  BoxMaxs 650 1100 750
- DrawShape 1
  ShapeColor 1 0.491 0 0.157
  TriggerActivationType "Every query"
  PeriodicQueries 1
