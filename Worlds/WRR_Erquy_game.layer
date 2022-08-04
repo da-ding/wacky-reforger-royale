@@ -74,7 +74,6 @@ SCR_DestructibleBuildingEntity Barrier : "{3299E6F34CE40185}Prefabs/Structures/A
    Static 0
   }
   RplComponent "{50A4E7C9B5728062}" {
-   AutoHierarchy 1
   }
  }
  coords 11184.133 -131 11635.762

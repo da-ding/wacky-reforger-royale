@@ -59,7 +59,6 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "	void ScaleBarrier(float timeSlice)"\
  "	{"\
  "		//if (!Replication.IsServer()) return;"\
- "		"\
  ""\
  "		World w = GetGame().GetWorld();"\
  "		SCR_FactionControlTriggerEntity usTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
@@ -115,6 +114,7 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		RplComponent rplC = RplComponent.Cast(FindComponent(RplComponent));"\
  ""\
  "		World w = GetGame().GetWorld();"\
+ "		m_eBarrier = w.FindEntityByName(\"Barrier\");"\
  "		SCR_FactionControlTriggerEntity usTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
  "		"\
  "		if (rplC && rplC.IsOwner())"\
@@ -131,12 +131,14 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		m_fInitialBarrierScale  = m_eBarrier.GetScale();"\
  "		"\
  "		super.OnGameStart();"\
- "		const float tick = 1 / 16;"\
+ "		//const float tick = 1 / 16"\
+ "		const float tick = 2;"\
  ""\
  "		GetGame().GetCallqueue().CallLater(ScaleBarrier, tick * 1000, true, tick);"\
  "		GetGame().GetCallqueue().CallLater(m_eBarrier.Update, 500, true);"\
  "	"
  m_fBleedingRateScale 0.4
+ m_bAutoDisabledControls 1
 }
 TagManager : "{2FA9E172CAB1857A}Prefabs/MP/Managers/TagManager.et" {
  coords 10343.464 13.056 12030.378
