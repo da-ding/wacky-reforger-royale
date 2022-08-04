@@ -36,19 +36,27 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
   SCR_SaveLoadComponent "{58FA739CBE3E9FC5}" {
    Enabled 0
   }
+  RplComponent "{56B2B4793BF2E1B4}" {
+   Streamable Enabled
+  }
  }
  coords 10346.953 12.943 12034.763
  angleX -4.627
  angleY 117.883
  userScript "	IEntity m_eBarrier;"\
+ "	[RplProp(onRplName: \"SetBarrier\")]"\
+ "	RplId m_rBarrier;"\
  "	AIWaypoint m_eWaypoint;"\
- "	"\
+ ""\
  "	[RplProp()]"\
  "	float m_fInitialTriggerRadius;"\
  "	[RplProp()]"\
  "	float m_fInitialBarrierScale;"\
- "	[RplProp(onRplName: \"SetBarrier\")]"\
- "	RplId m_rBarrier;"\
+ "	"\
+ "	[RplProp(onRplName: \"UpdateBarrierEntity\")]"\
+ "	float m_fBarrierScale;"\
+ "	[RplProp(onRplName: \"UpdateBarrierEntity\")]"\
+ "	vector m_vBarrierOrigin;"\
  "	"\
  "	void SetBarrier()"\
  "	{"\
@@ -56,53 +64,41 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		if (barrier) m_eBarrier = barrier;"\
  "	}"\
  "	"\
+ "	void UpdateBarrierEntity()"\
+ "	{"\
+ "		if (Replication.IsClient()) Print(\"This never Executes\");"\
+ "		if (!m_eBarrier) return;"\
+ "		if (Replication.IsClient()) Print(\"With the Barrier!\");"\
+ ""\
+ "		// Set the barrier size to a fraction of its initial size"\
+ "		m_eBarrier.SetScale(m_fBarrierScale * m_fInitialBarrierScale);"\
+ "		// slightly raise because greenhouse origin is below ground"\
+ "		m_eBarrier.SetOrigin(m_vBarrierOrigin);"\
+ "		m_eBarrier.Update();"\
+ "	}"\
+ "	"\
  "	void ScaleBarrier(float timeSlice)"\
  "	{"\
  "		//if (!Replication.IsServer()) return;"\
+ "		RplComponent rplC = RplComponent.Cast(FindComponent(RplComponent));"\
+ "		if (!rplC || !rplC.IsOwner()) return;"\
  ""\
  "		World w = GetGame().GetWorld();"\
  "		SCR_FactionControlTriggerEntity usTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUS\"));"\
  "		SCR_FactionControlTriggerEntity ussrTrigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName(\"VictoryConditionUSSR\"));"\
  ""\
- "		float lastRadius = usTrigger.GetSphereRadius();"\
- "		float delta = (timeSlice * 1.5);"\
- "		"\
- "		float radius = lastRadius - delta;"\
- "		usTrigger.SetSphereRadius(radius);"\
- ""\
- "		ussrTrigger.SetSphereRadius(radius);"\
- "		"\
- "		float scale = radius / lastRadius;"\
- ""\
- "		if (!m_eBarrier) return;"\
- ""\
- "		vector transform[4];"\
- "		m_eBarrier.GetWorldTransform(transform);"\
- "		if (!transform) return;"\
- "		transform[3] = transform[3] + (\"0 0.15 0\" * delta); // slightly raise because origin is below ground"\
- "		SCR_Math3D.ScaleMatrix(transform, scale);"\
- ""\
- "		m_eBarrier.SetWorldTransform(transform);"\
- "		m_eBarrier.Update();"\
- ""\
- "/*"\
  "		float delta = (timeSlice * 10);"\
  "		float radius = usTrigger.GetSphereRadius() - delta;"\
- "		"\
+ ""\
  "		usTrigger.SetSphereRadius(radius);"\
  "		ussrTrigger.SetSphereRadius(radius);"\
  "		if (m_eWaypoint)"\
  "			m_eWaypoint.SetCompletionRadius(radius);"\
  "		"\
- "		"\
- "		float scale = radius / m_fInitialTriggerRadius;"\
- "		"\
- "		if (!m_eBarrier) return;"\
- "		m_eBarrier.SetScale(scale * m_fInitialBarrierScale);"\
- "		// slightly raise because greenhouse origin is below ground"\
- "		m_eBarrier.SetOrigin(m_eBarrier.GetOrigin() + (\"0 0.15 0\" * delta));"\
- "		m_eBarrier.Update();"\
- "*/"\
+ "		m_fBarrierScale = radius / m_fInitialTriggerRadius;"\
+ "		m_vBarrierOrigin = m_eBarrier.GetOrigin() + (\"0 0.15 0\" * delta);"\
+ "		UpdateBarrierEntity();"\
+ "		Replication.BumpMe();"\
  "	}"
  EOnFrame ""\
  "		super.EOnFrame(owner, timeSlice);"\
@@ -112,6 +108,12 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "	"
  OnGameStart ""\
  "		RplComponent rplC = RplComponent.Cast(FindComponent(RplComponent));"\
+ "		if (rplC.IsProxy()) Print(\"Proxy is running this code, too\");"\
+ "		if (Replication.IsClient()) Print(\"Is Client\");"\
+ "		if (Replication.IsRunning()) Print(\"Is Running\");"\
+ "		//if (Replication.IsInherited()) Print(\"Is Inherited\");"\
+ "		if (Replication.IsServer()) Print(\"Is Server\");"\
+ "		if (rplC.IsOwner()) Print(\"Is Owner\");"\
  ""\
  "		World w = GetGame().GetWorld();"\
  "		m_eBarrier = w.FindEntityByName(\"Barrier\");"\
@@ -119,6 +121,7 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		"\
  "		if (rplC && rplC.IsOwner())"\
  "		{"\
+ "			Print(\"We are in fact, in the presence of an Owner!\");"\
  "			m_eBarrier = w.FindEntityByName(\"Barrier\");"\
  "			RplComponent rplBarrier = RplComponent.Cast(m_eBarrier.FindComponent(RplComponent));"\
  "			m_rBarrier = rplBarrier.Id();"\
@@ -131,11 +134,11 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		m_fInitialBarrierScale  = m_eBarrier.GetScale();"\
  "		"\
  "		super.OnGameStart();"\
- "		//const float tick = 1 / 16"\
- "		const float tick = 2;"\
+ "		const float tick = 1 / 16;"\
+ "		//const float tick = 2;"\
  ""\
  "		GetGame().GetCallqueue().CallLater(ScaleBarrier, tick * 1000, true, tick);"\
- "		GetGame().GetCallqueue().CallLater(m_eBarrier.Update, 500, true);"\
+ "		//GetGame().GetCallqueue().CallLater(m_eBarrier.Update, 500, true);"\
  "	"
  m_fBleedingRateScale 0.4
  m_bAutoDisabledControls 1
