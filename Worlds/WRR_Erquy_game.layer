@@ -1,3 +1,13 @@
+ScalerGuy Scaler {
+ components {
+  RplComponent "{5A0ABB85C8125CC9}" {
+  }
+ }
+ coords 11112.058 30.741 11634.645
+ TriggerActivationType "Every query"
+ PeriodicQueries 1
+ UpdatePeriod 0.1
+}
 DAD_FactionControlTriggerEntity VictoryConditionUS {
  coords 11203.813 27.372 11646.876
  angleY -31.8
@@ -28,7 +38,7 @@ DAD_FactionControlTriggerEntity VictoryConditionUS {
  "		m_bActivated = false;"\
  "		Print(\"USSR Control Deactivated\");"\
  "	"
- m_fInitialDelay 1
+ m_fInitialDelay 6.6
  m_fFriendlyRatioLimit 1
 }
 SCR_DestructibleBuildingEntity Barrier : "{3299E6F34CE40185}Prefabs/Structures/Agriculture/Greenhouse/Greenhouse_01.et" {
