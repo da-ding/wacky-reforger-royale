@@ -3,6 +3,16 @@ SCR_ChimeraCharacter : "{814A00A63A64E8B4}Prefabs/Characters/Factions/OPFOR/USSR
  components {
   SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
    InitialInventoryItems {
+    ItemsInitConfigurationItem "{54A4D05608012D36}" {
+     PrefabsToSpawn {
+      "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et"
+     }
+    }
+    ItemsInitConfigurationItem "{5888EBE3A98AF2CB}" {
+     PrefabsToSpawn {
+      "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et"
+     }
+    }
     ItemsInitConfigurationItem "{56607B902B535037}" {
      PrefabsToSpawn {
       "{13772C903CB5E4F7}Prefabs/Items/Equipment/Maps/PaperMap_01_folded.et" "{C67994AF81D58223}Prefabs/Items/Equipment/Radios/Radio_R148_Unequippable.et"
