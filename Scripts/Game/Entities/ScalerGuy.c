@@ -42,12 +42,12 @@ class ScalerGuy: DAD_BaseTriggerEntity
 		SCR_FactionControlTriggerEntity triggerRus = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName("VictoryConditionUSSR"));
 
 		float oldRadius = trigger.GetSphereRadius();
-		float metresDecreasePerSecond = 1;
-		if (oldRadius < 50)
-			metresDecreasePerSecond = Math.Min(metresDecreasePerSecond, oldRadius * 0.03);
-
+		float metresDecreasePerSecond = 1.8;
+		if (oldRadius < 35)
+			metresDecreasePerSecond = Math.Min(metresDecreasePerSecond, oldRadius * 0.05);
 		float delta = (timeSlice * metresDecreasePerSecond);
 		float radius = oldRadius - delta;
+
 
 		trigger.SetSphereRadius(radius);
 		triggerRus.SetSphereRadius(radius);
@@ -77,6 +77,7 @@ class ScalerGuy: DAD_BaseTriggerEntity
 
 	void init()
 	{
+
 		RplComponent rplC = RplComponent.Cast(FindComponent(RplComponent));
 
 		World w = GetGame().GetWorld();

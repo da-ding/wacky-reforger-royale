@@ -10,7 +10,7 @@ $grp AISpawnerEntity {
   m_aEntitySpawnSlots {
    "{F1CFB248C6448F05}Prefabs/Groups/BLUFOR/Group_US_PistolTeam.et" "{016400988C331161}Prefabs/Groups/OPFOR/Group_USSR_PistolTeam.et"
   }
-  m_fSpawnCount 6
+  m_fSpawnCount 16
   m_bRandomChoose 0
  }
  AISpawns2 {
@@ -24,7 +24,7 @@ $grp AISpawnerEntity {
   m_aEntitySpawnSlots {
    "{F1CFB248C6448F05}Prefabs/Groups/BLUFOR/Group_US_PistolTeam.et" "{016400988C331161}Prefabs/Groups/OPFOR/Group_USSR_PistolTeam.et"
   }
-  m_fSpawnCount 8
+  m_fSpawnCount 24
   m_bRandomChoose 0
  }
 }
