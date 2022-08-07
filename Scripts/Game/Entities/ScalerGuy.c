@@ -9,10 +9,14 @@ class ScalerGuy: DAD_BaseTriggerEntity
 	float m_fInitialTriggerRadius;
 	float m_fInitialBarrierScale;
 
+	[RplProp()]
+	float m_fBarrierOriginX;
+	[RplProp()]
+	float m_fBarrierOriginY;
+	[RplProp()]
+	float m_fBarrierOriginZ;
 	[RplProp(onRplName: "UpdateBarrierEntity")]
 	float m_fBarrierScale;
-	//[RplProp(onRplName: "UpdateBarrierEntity")]
-	vector m_vBarrierOrigin;
 
 	void UpdateBarrierEntity()
 	{
@@ -21,7 +25,8 @@ class ScalerGuy: DAD_BaseTriggerEntity
 		if (!barrier) return;
 
 		if (m_fBarrierScale) barrier.SetScale(m_fBarrierScale);
-		if (m_vBarrierOrigin) barrier.SetOrigin(m_vBarrierOrigin);
+		if (m_fBarrierOriginX && m_fBarrierOriginY && m_fBarrierOriginZ)
+			barrier.SetOrigin(Vector(m_fBarrierOriginX, m_fBarrierOriginY, m_fBarrierOriginZ));
 		barrier.Update();
 	}
 
@@ -36,8 +41,13 @@ class ScalerGuy: DAD_BaseTriggerEntity
 		SCR_FactionControlTriggerEntity trigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName("VictoryConditionUS"));
 		SCR_FactionControlTriggerEntity triggerRus = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName("VictoryConditionUSSR"));
 
-		float delta = (timeSlice * 0.8);
-		float radius = trigger.GetSphereRadius() - delta;
+		float oldRadius = trigger.GetSphereRadius();
+		float metresDecreasePerSecond = 1;
+		if (oldRadius < 50)
+			metresDecreasePerSecond = Math.Min(metresDecreasePerSecond, oldRadius * 0.03);
+
+		float delta = (timeSlice * metresDecreasePerSecond);
+		float radius = oldRadius - delta;
 
 		trigger.SetSphereRadius(radius);
 		triggerRus.SetSphereRadius(radius);
@@ -51,7 +61,15 @@ class ScalerGuy: DAD_BaseTriggerEntity
 		// Set the barrier size to a fraction of its initial size
 		m_fBarrierScale = scale * m_fInitialBarrierScale;
 		// slightly raise because greenhouse origin is below ground
-		m_vBarrierOrigin = barrier.GetOrigin() + ("0 0.15 0" * delta);
+		// TODO: Calculate the lowest point of ground along the barrier base
+		//  and make sure the greenhouse dirt is below that
+		float nearEndOfGameHack;
+		if (scale < 0.15) nearEndOfGameHack = 1.4;
+		else              nearEndOfGameHack = 1;
+		vector origin = barrier.GetOrigin() + ("0 0.15 0" * delta * nearEndOfGameHack);
+		m_fBarrierOriginX = vector.Dot(origin, "1 0 0");
+		m_fBarrierOriginY = vector.Dot(origin, "0 1 0");
+		m_fBarrierOriginZ = vector.Dot(origin, "0 0 1");
 
 		UpdateBarrierEntity();
 		Replication.BumpMe();
@@ -59,7 +77,6 @@ class ScalerGuy: DAD_BaseTriggerEntity
 
 	void init()
 	{
-
 		RplComponent rplC = RplComponent.Cast(FindComponent(RplComponent));
 
 		World w = GetGame().GetWorld();
