@@ -26,6 +26,25 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
    m_iKillFeedType FULL
    m_iReceiveKillFeedType ALL
   }
+  SCR_RespawnBriefingComponent "{5AAA2ED99BECB2B2}" {
+   m_aWinConditions {
+    SCR_BriefingVictoryCondition "{5AAA2ED9B07CFB0E}" {
+     victoryCondition GUARD
+     name "Last Standing wins"
+     description "Be the last side surviving inside of the play area"
+    }
+    SCR_BriefingVictoryCondition "{5AAA2ED9D96B74E1}" {
+     victoryCondition SEIZE
+     name "Look for gear"
+     description "Traverse the map searching for item spawn. Currently these are just littered around the open."
+    }
+    SCR_BriefingVictoryCondition "{5AAA2ED9D9B06A4F}" {
+     victoryCondition MOVE
+     name "Strategise with your team"
+     description "Leaving the play area is a viable strategy, as long as one member of your side remains in the play area."
+    }
+   }
+  }
   SCR_RespawnMenuHandlerComponent "{59CC387546D47B87}" {
    m_bAllowFactionChange 0
    m_bAllowLoadoutSelection 0
