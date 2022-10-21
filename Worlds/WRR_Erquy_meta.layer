@@ -73,7 +73,6 @@ SCR_BaseGameMode Gamemode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_P
  "		//GetGame().GetCallqueue().CallLater(init, 200);"\
  "	"
  m_fBleedingRateScale 0.4
- m_bAutoDisabledControls 1
 }
 TagManager : "{2FA9E172CAB1857A}Prefabs/MP/Managers/TagManager.et" {
  coords 10343.464 13.056 12030.378
@@ -99,6 +98,12 @@ SCR_LoadoutManager : "{97EF4C1A41F63DDB}Prefabs/MP/Managers/Loadouts/LoadoutMana
  angleX -5.573
  angleY 103.683
  m_aPlayerLoadouts {
+  SCR_FactionPlayerLoadout "{5A2494BE3D648F60}" {
+   m_sAffiliatedFaction ""
+  }
+  SCR_FactionPlayerLoadout "{5A2494B91167F3F6}" {
+   m_sAffiliatedFaction ""
+  }
   SCR_FactionPlayerLoadout "{56B2B4613DCD3341}" {
    m_sAffiliatedFaction ""
   }
