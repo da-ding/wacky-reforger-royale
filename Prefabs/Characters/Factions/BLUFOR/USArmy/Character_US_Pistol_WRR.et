@@ -13,6 +13,7 @@ SCR_ChimeraCharacter : "{E4DE47895BD6B650}Prefabs/Characters/Factions/BLUFOR/US_
     }
     ItemsInitConfigurationItem "{5888DEA7DB245B42}" {
      PrefabsToSpawn {
+      "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et"
      }
     }
     ItemsInitConfigurationItem "{56607B916E51CA58}" {
