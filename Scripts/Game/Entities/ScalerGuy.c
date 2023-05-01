@@ -38,8 +38,7 @@ class ScalerGuy: DAD_BaseTriggerEntity
 		World w = GetGame().GetWorld();
 		IEntity barrier = w.FindEntityByName("Barrier");
 
-		SCR_FactionControlTriggerEntity trigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName("VictoryConditionUS"));
-		SCR_FactionControlTriggerEntity triggerRus = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName("VictoryConditionUSSR"));
+		DAD_FactionControlTriggerEntity trigger = DAD_FactionControlTriggerEntity.Cast(w.FindEntityByName("VictoryCondition"));
 
 		float oldRadius = trigger.GetSphereRadius();
 		float metresDecreasePerSecond = 1.8;
@@ -50,7 +49,6 @@ class ScalerGuy: DAD_BaseTriggerEntity
 
 
 		trigger.SetSphereRadius(radius);
-		triggerRus.SetSphereRadius(radius);
 		if (m_eWaypoint)
 			m_eWaypoint.SetCompletionRadius(radius);
 
@@ -87,7 +85,7 @@ class ScalerGuy: DAD_BaseTriggerEntity
 		if (Replication.IsServer())
 		{
 
-			SCR_FactionControlTriggerEntity trigger = SCR_FactionControlTriggerEntity.Cast(w.FindEntityByName("VictoryConditionUS"));
+			DAD_FactionControlTriggerEntity trigger = DAD_FactionControlTriggerEntity.Cast(w.FindEntityByName("VictoryCondition"));
 			m_fInitialTriggerRadius = trigger.GetSphereRadius();
 
 			m_fInitialBarrierScale = barrier.GetScale();
