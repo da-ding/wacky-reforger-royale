@@ -6,9 +6,17 @@ SCR_ChimeraCharacter : "{E4DE47895BD6B650}Prefabs/Characters/Factions/BLUFOR/US_
   }
   SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
    InitialInventoryItems {
+    ItemsInitConfigurationItem "{5A24B6035F9481AF}" {
+     PrefabsToSpawn {
+      "{B4785B93B0A9A42E}Prefabs/Items/Equipment/Radios/Radio_ANPRC68_Unequippable.et" "{61D4F80E49BF9B12}Prefabs/Items/Equipment/Compass/Compass_SY183.et" "{13772C903CB5E4F7}Prefabs/Items/Equipment/Maps/PaperMap_01_folded.et" "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et" "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et"
+     }
+    }
+    ItemsInitConfigurationItem "{5A24B6035F7619E7}" {
+     PrefabsToSpawn {
+     }
+    }
     ItemsInitConfigurationItem "{54A49B42D138207E}" {
      PrefabsToSpawn {
-      "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et"
      }
     }
     ItemsInitConfigurationItem "{5888DEA7DB245B42}" {
@@ -18,7 +26,6 @@ SCR_ChimeraCharacter : "{E4DE47895BD6B650}Prefabs/Characters/Factions/BLUFOR/US_
     }
     ItemsInitConfigurationItem "{56607B916E51CA58}" {
      PrefabsToSpawn {
-      "{13772C903CB5E4F7}Prefabs/Items/Equipment/Maps/PaperMap_01_folded.et" "{B4785B93B0A9A42E}Prefabs/Items/Equipment/Radios/Radio_ANPRC68_Unequippable.et"
      }
     }
    }

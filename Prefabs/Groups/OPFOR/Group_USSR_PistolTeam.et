@@ -11,8 +11,8 @@ SCR_AIGroup : "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et" 
    m_Skill 0.725
   }
  }
- DangerEventRange 250
- DynamicSim_Lod1_distance 1200
+ DangerEventRange 50
+ DynamicSim_Lod1_distance 500
  m_aUnitPrefabSlots {
   "{6A4D671F9F9A0D18}Prefabs/Characters/Factions/OPFOR/USSRArmy/Character_USSR_Pistol_WRR.et" "{6A4D671F9F9A0D18}Prefabs/Characters/Factions/OPFOR/USSRArmy/Character_USSR_Pistol_WRR.et" "{6A4D671F9F9A0D18}Prefabs/Characters/Factions/OPFOR/USSRArmy/Character_USSR_Pistol_WRR.et"
  }

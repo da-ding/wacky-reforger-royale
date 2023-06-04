@@ -21,7 +21,6 @@ DAD_FactionControlTriggerEntity VictoryCondition {
  "	"
  m_fFriendlyRatioLimit 1
 }
-}
 ScalerGuy Scaler {
  components {
   RplComponent "{5A0ABB85C8125CC9}" {

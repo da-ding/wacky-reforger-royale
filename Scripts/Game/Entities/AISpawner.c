@@ -46,7 +46,11 @@ class AISpawnerEntity: DAD_SpawnRadiusEntity
 	static void AddGroupToWaypoint(SCR_AIGroup group)
 	{
 		AIWaypoint waypoint = AIWaypoint.Cast(GetGame().GetWorld().FindEntityByName("BarrierWaypoint"));
-		if (waypoint && group) group.AddWaypoint(waypoint);
+		if (waypoint && group) 
+		{
+			group.AddWaypoint(waypoint);
+			Print("Created Waypoint for group!", LogLevel.WARNING);
+		}
 	}
 
 };

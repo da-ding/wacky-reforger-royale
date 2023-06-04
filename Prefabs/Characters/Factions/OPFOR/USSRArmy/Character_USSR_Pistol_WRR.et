@@ -3,19 +3,29 @@ SCR_ChimeraCharacter : "{814A00A63A64E8B4}Prefabs/Characters/Factions/OPFOR/USSR
  components {
   SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
    InitialInventoryItems {
-    ItemsInitConfigurationItem "{54A4D05608012D36}" {
+    ItemsInitConfigurationItem "{5A24CC173771408E}" {
      PrefabsToSpawn {
-      "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et"
+      "{C67994AF81D58223}Prefabs/Items/Equipment/Radios/Radio_R148_Unequippable.et" "{7CEF68E2BC68CE71}Prefabs/Items/Equipment/Compass/Compass_Adrianov.et" "{13772C903CB5E4F7}Prefabs/Items/Equipment/Maps/PaperMap_01_folded.et" "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et" "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et"
+     }
+    }
+    ItemsInitConfigurationItem "{5A24CC173897B74F}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{54A4D05608012D36}" {
+     TargetStorage "Prefabs/Characters/Uniforms/Jacket_M88.et"
+     PrefabsToSpawn {
      }
     }
     ItemsInitConfigurationItem "{5888EBE3A98AF2CB}" {
+     TargetStorage "Prefabs/Characters/Uniforms/Jacket_M88.et"
      PrefabsToSpawn {
-      "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et"
      }
     }
     ItemsInitConfigurationItem "{56607B902B535037}" {
+     TargetStorage "Prefabs/Characters/Uniforms/Pants_M88.et"
      PrefabsToSpawn {
-      "{13772C903CB5E4F7}Prefabs/Items/Equipment/Maps/PaperMap_01_folded.et" "{C67994AF81D58223}Prefabs/Items/Equipment/Radios/Radio_R148_Unequippable.et"
+      ""
      }
     }
    }
